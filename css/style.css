@@ -1,0 +1,596 @@
+* {
+	box-sizing: border-box
+}
+
+#typed-text {
+	font-size: 31px;
+	font-family: 'Brush Script MT', cursive;
+	fill: black;
+}
+		
+#main-art .cls-1 {
+	fill: #4b5c61
+}
+
+#main-art .cls-2 {
+	fill: #54666e
+}
+
+#main-art .cls-3 {
+	fill: #404f55
+}
+
+#main-art .cls-106,
+#main-art .cls-107,
+#main-art .cls-108,
+#main-art .cls-109,
+#main-art .cls-110,
+#main-art .cls-111,
+#main-art .cls-112,
+#main-art .cls-113,
+#main-art .cls-114,
+#main-art .cls-115,
+#main-art .cls-116,
+#main-art .cls-117,
+#main-art .cls-118,
+#main-art .cls-119,
+#main-art .cls-120,
+#main-art .cls-121,
+#main-art .cls-122,
+#main-art .cls-123,
+#main-art .cls-125,
+#main-art .cls-126,
+#main-art .cls-127,
+#main-art .cls-128,
+#main-art .cls-129,
+#main-art .cls-130,
+#main-art .cls-131,
+#main-art .cls-133,
+#main-art .cls-134,
+#main-art .cls-135,
+#main-art .cls-136,
+#main-art .cls-137,
+#main-art .cls-138,
+#main-art .cls-139,
+#main-art .cls-140,
+#main-art .cls-141,
+#main-art .cls-142,
+#main-art .cls-143,
+#main-art .cls-144,
+#main-art .cls-20,
+#main-art .cls-26,
+#main-art .cls-30,
+#main-art .cls-31,
+#main-art .cls-38,
+#main-art .cls-40,
+#main-art .cls-48,
+#main-art .cls-49,
+#main-art .cls-52,
+#main-art .cls-54,
+#main-art .cls-56,
+#main-art .cls-58,
+#main-art .cls-60,
+#main-art .cls-62,
+#main-art .cls-63,
+#main-art .cls-66,
+#main-art .cls-67,
+#main-art .cls-69 {
+	fill: none
+}
+
+#main-art .cls-20 {
+	stroke: #3f413e
+}
+
+#main-art .cls-106,
+#main-art .cls-107,
+#main-art .cls-108,
+#main-art .cls-109,
+#main-art .cls-110,
+#main-art .cls-111,
+#main-art .cls-112,
+#main-art .cls-113,
+#main-art .cls-114,
+#main-art .cls-115,
+#main-art .cls-116,
+#main-art .cls-117,
+#main-art .cls-118,
+#main-art .cls-119,
+#main-art .cls-120,
+#main-art .cls-121,
+#main-art .cls-122,
+#main-art .cls-123,
+#main-art .cls-124,
+#main-art .cls-125,
+#main-art .cls-126,
+#main-art .cls-127,
+#main-art .cls-128,
+#main-art .cls-129,
+#main-art .cls-130,
+#main-art .cls-131,
+#main-art .cls-133,
+#main-art .cls-134,
+#main-art .cls-135,
+#main-art .cls-136,
+#main-art .cls-137,
+#main-art .cls-138,
+#main-art .cls-139,
+#main-art .cls-140,
+#main-art .cls-141,
+#main-art .cls-142,
+#main-art .cls-143,
+#main-art .cls-144,
+#main-art .cls-20,
+#main-art .cls-24,
+#main-art .cls-26,
+#main-art .cls-30,
+#main-art .cls-31,
+#main-art .cls-38,
+#main-art .cls-40,
+#main-art .cls-42,
+#main-art .cls-48,
+#main-art .cls-49,
+#main-art .cls-52,
+#main-art .cls-55,
+#main-art .cls-56,
+#main-art .cls-58,
+#main-art .cls-60,
+#main-art .cls-62,
+#main-art .cls-63,
+#main-art .cls-65,
+#main-art .cls-66,
+#main-art .cls-67 {
+	stroke-linecap: round;
+	stroke-linejoin: round
+}
+
+#main-art .cls-21 {
+	fill: #d0cbbd
+}
+
+#main-art .cls-22 {
+	opacity: 0.2
+}
+
+#main-art .cls-124,
+#main-art .cls-23,
+#main-art .cls-24,
+#main-art .cls-64,
+#main-art .cls-65 {
+	fill: #fff
+}
+
+#main-art .cls-23,
+#main-art .cls-24,
+#main-art .cls-26 {
+	stroke: #fff
+}
+
+#main-art .cls-132,
+#main-art .cls-23,
+#main-art .cls-41,
+#main-art .cls-53,
+#main-art .cls-54,
+#main-art .cls-59,
+#main-art .cls-61,
+#main-art .cls-69,
+#main-art .cls-75 {
+	stroke-miterlimit: 10
+}
+
+#main-art .cls-25 {
+	opacity: 0.25
+}
+
+#main-art .cls-27 {
+	fill: #ded5ae
+}
+
+#main-art .cls-28 {
+	fill: #a7a99f
+}
+
+#main-art .cls-29 {
+	fill: #747678
+}
+
+#main-art .cls-30 {
+	stroke: #4e504c
+}
+
+#main-art .cls-31 {
+	stroke: #4b4c4a
+}
+
+#main-art .cls-32 {
+	opacity: 0.1
+}
+
+#main-art .cls-33 {
+	fill: #deddcf
+}
+
+#main-art .cls-34 {
+	fill: #dfdece
+}
+
+#main-art .cls-35 {
+	fill: #d6d3c1
+}
+
+#main-art .cls-36 {
+	fill: #d7d3c3
+}
+
+#main-art .cls-37 {
+	fill: #d8d6bb
+}
+
+#main-art .cls-38 {
+	stroke: #4d4f4b
+}
+
+#main-art .cls-39,
+#main-art .cls-41,
+#main-art .cls-42 {
+	fill: #cec7c6
+}
+
+#main-art .cls-40,
+#main-art .cls-41,
+#main-art .cls-42 {
+	stroke: #2e302e
+}
+
+#main-art .cls-43 {
+	fill: #c9c4b1
+}
+
+#main-art .cls-44 {
+	fill: #b7b2a0
+}
+
+#main-art .cls-45 {
+	fill: #d1cdb6
+}
+
+#main-art .cls-46 {
+	fill: #e5e5c3
+}
+
+#main-art .cls-47 {
+	fill: #f2e398
+}
+
+#main-art .cls-48 {
+	stroke: #de794c
+}
+
+#main-art .cls-49 {
+	stroke: #292b28
+}
+
+#main-art .cls-50 {
+	fill: #f1e298
+}
+
+#main-art .cls-51,
+#main-art .cls-53,
+#main-art .cls-55 {
+	fill: #cfc7c7
+}
+
+#main-art .cls-52,
+#main-art .cls-53,
+#main-art .cls-54,
+#main-art .cls-55 {
+	stroke: #282b28
+}
+
+#main-art .cls-56 {
+	stroke: #364b47
+}
+
+#main-art .cls-57,
+#main-art .cls-61 {
+	fill: #cec6c7
+}
+
+#main-art .cls-124,
+#main-art .cls-125,
+#main-art .cls-135,
+#main-art .cls-58,
+#main-art .cls-65 {
+	stroke: #231f20
+}
+
+#main-art .cls-59 {
+	fill: #e3ceaa
+}
+
+#main-art .cls-59,
+#main-art .cls-60 {
+	stroke: #1c1c1c
+}
+
+#main-art .cls-61,
+#main-art .cls-62 {
+	stroke: #141414
+}
+
+#main-art .cls-63 {
+	stroke: #575955
+}
+
+#main-art .cls-113,
+#main-art .cls-131,
+#main-art .cls-66 {
+	stroke: #0a1421
+}
+
+#main-art .cls-125,
+#main-art .cls-126,
+#main-art .cls-128,
+#main-art .cls-129,
+#main-art .cls-138,
+#main-art .cls-139,
+#main-art .cls-141,
+#main-art .cls-142,
+#main-art .cls-143,
+#main-art .cls-66,
+#main-art .cls-67 {
+	stroke-width: 1.5px
+}
+
+#main-art .cls-119,
+#main-art .cls-67 {
+	stroke: #0b1c30
+}
+
+#main-art .cls-132,
+#main-art .cls-68 {
+	fill: #e3d9d8
+}
+
+#main-art .cls-106,
+#main-art .cls-127,
+#main-art .cls-69 {
+	stroke: #543b38
+}
+
+#main-art .cls-70 {
+	fill: #f4f4f0
+}
+
+#main-art .cls-71 {
+	fill: #ebe7e5
+}
+
+#main-art .cls-72 {
+	fill: #ddcec5
+}
+
+#main-art .cls-73 {
+	fill: #484b66
+}
+
+#main-art .cls-74 {
+	fill: #c2b6a9
+}
+
+#main-art .cls-75,
+#main-art .cls-76 {
+	fill: #c70719
+}
+
+#main-art .cls-138,
+#main-art .cls-75 {
+	stroke: #3b1314
+}
+
+#main-art .cls-77 {
+	fill: #73282f
+}
+
+#main-art .cls-78 {
+	fill: #fff
+}
+
+#main-art .cls-79 {
+	fill: #e5e5b6
+}
+
+#main-art .cls-80 {
+	fill: #292324
+}
+
+#main-art .cls-81 {
+	fill: #495362
+}
+
+#main-art .cls-82 {
+	fill: #744745
+}
+
+#main-art .cls-83 {
+	fill: #212e3a
+}
+
+#main-art .cls-84 {
+	fill: #353e48
+}
+
+#main-art .cls-85 {
+	fill: #ebce86
+}
+
+#main-art .cls-86 {
+	fill: #292324
+}
+
+#main-art .cls-87 {
+	fill: #54323a
+}
+
+#main-art .cls-88 {
+	fill: #664c56
+}
+
+#main-art .cls-89 {
+	fill: #4f2f35
+}
+
+#main-art .cls-90 {
+	fill: #654c56
+}
+
+#main-art .cls-91 {
+	fill: #7c464d
+}
+
+#main-art .cls-92 {
+	fill: #f3f4c7
+}
+
+#main-art .cls-93 {
+	fill: #393d51
+}
+
+#main-art .cls-94 {
+	fill: #ebe6e5
+}
+
+#main-art .cls-95 {
+	fill: #553b38
+}
+
+#main-art .cls-96 {
+	fill: #80363f
+}
+
+#main-art .cls-97 {
+	fill: #a26a6a
+}
+
+#main-art .cls-98 {
+	fill: #6f3f3d
+}
+
+#main-art .cls-99 {
+	fill: #c70719
+}
+
+#main-art .cls-100 {
+	fill: #cfc6c8
+}
+
+#main-art .cls-101 {
+	fill: #cfc7c6
+}
+
+#main-art .cls-102 {
+	fill: #383f45
+}
+
+#main-art .cls-103 {
+	fill: #e2d7d7
+}
+
+#main-art .cls-104 {
+	fill: #673339
+}
+
+#main-art .cls-105 {
+	fill: #11181f
+}
+
+#main-art .cls-107,
+#main-art .cls-128 {
+	stroke: #050709
+}
+
+#main-art .cls-108,
+#main-art .cls-129,
+#main-art .cls-140 {
+	stroke: #211011
+}
+
+#main-art .cls-109,
+#main-art .cls-116 {
+	stroke: #462d2b
+}
+
+#main-art .cls-110 {
+	stroke: #6f4e4b
+}
+
+#main-art .cls-111 {
+	stroke: #a08480
+}
+
+#main-art .cls-112,
+#main-art .cls-126,
+#main-art .cls-130 {
+	stroke: #4d1114
+}
+
+#main-art .cls-114,
+#main-art .cls-133 {
+	stroke: #210f0f
+}
+
+#main-art .cls-115,
+#main-art .cls-134 {
+	stroke: #2e1010
+}
+
+#main-art .cls-116,
+#main-art .cls-124,
+#main-art .cls-127,
+#main-art .cls-130,
+#main-art .cls-131,
+#main-art .cls-132,
+#main-art .cls-133,
+#main-art .cls-134,
+#main-art .cls-135,
+#main-art .cls-136,
+#main-art .cls-137,
+#main-art .cls-140,
+#main-art .cls-144 {
+	stroke-width: 1.25px
+}
+
+#main-art .cls-117,
+#main-art .cls-136 {
+	stroke: #272939
+}
+
+#main-art .cls-118,
+#main-art .cls-137 {
+	stroke: #3b1c1e
+}
+
+#main-art .cls-120,
+#main-art .cls-141 {
+	stroke: #49413c
+}
+
+#main-art .cls-121,
+#main-art .cls-142 {
+	stroke: #2d1619
+}
+
+#main-art .cls-122,
+#main-art .cls-143 {
+	stroke: #292624
+}
+
+#main-art .cls-123,
+#main-art .cls-132,
+#main-art .cls-144 {
+	stroke: #000
+}
+
+#main-art .cls-139 {
+	stroke: #221011
+}
