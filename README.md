@@ -1,4 +1,4 @@
-# Felices Fiestas Patrias Perú🇵🇪🎉🔴⚪🔴
+# Fiestas Patrias 🇵🇪🎉🔴⚪🔴
 En este mes de julio, celebramos con gran alegría y orgullo las Fiestas Patrias de nuestro querido Perú. Es un tiempo para recordar y honrar nuestra rica historia, nuestras tradiciones, y los valores que nos unen como nación.
 
 Cada rincón del país se viste de rojo y blanco, nuestros colores patrios, y la bandera ondea con fuerza en señal de libertad y esperanza. Desde las costas hasta la sierra y la selva, el espíritu peruano brilla intensamente, reflejando la diversidad y la unidad de nuestra tierra.
