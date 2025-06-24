@@ -5,6 +5,7 @@ function initFeature() {
 			o = screen.height / 2 - n / 2;
 		window.open(e, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + t + ",height=" + n + ",top=" + o + ",left=" + a)
 	}
+
 	var n = document.querySelector(".gi-header"),
 		a = window.innerWidth,
 		o = document.querySelector("nav"),
@@ -26,6 +27,7 @@ function initFeature() {
 			delay: .35
 		})
 	});
+
 	var s = document.getElementById("fg-crowd"),
 		c = document.getElementById("mg-back-characters"),
 		d = document.getElementById("mg-front-characters"),
@@ -52,9 +54,11 @@ function initFeature() {
 		ease: Back.easeInOut,
 		delay: 1
 	});
+
 	var w = function(e) {
 		"interactive" === document.readyState || "complete" === document.readyState ? e() : document.addEventListener("DOMContentLoaded", e)
 	};
+	
 	w(function() {
 		var e = document.querySelectorAll(".js-gi-share");
 		e && [].forEach.call(e, function(e) {
