@@ -1,4 +1,4 @@
-# Fiestas Patrias 🇵🇪🎉🔴⚪🔴
+# Fiestas Patrias 🇵🇪🎉
 [![forthebadge](http://forthebadge.com/images/badges/made-with-html.svg)](https://www.linkedin.com/in/drphp/)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
