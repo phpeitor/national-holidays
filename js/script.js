@@ -2994,7 +2994,7 @@ function initTyped() {
         startDelay: 1000,
         loop: true
     };
-    var typed = new Typed('#typed-text', options);
+    new Typed('#typed-text', options);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
