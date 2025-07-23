@@ -2985,7 +2985,6 @@ function initFeature() {
 }
 
 function initTyped() {
-
 	const smokeContainer = document.querySelector(".smoke-container");
 	
 	for (let i = 2; i <= 60; i++) {
