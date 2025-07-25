@@ -205,7 +205,7 @@ body {
 }
 
 #main-art .cls-25 {
-	opacity: 0.25
+	opacity: 1
 }
 
 #main-art .cls-27 {
@@ -237,23 +237,24 @@ body {
 }
 
 #main-art .cls-34 {
-	fill: #dfdece
+	fill: #2e302e
 }
 
 #main-art .cls-35 {
-	fill: #d6d3c1
+	fill: #2e302e
 }
 
 #main-art .cls-36 {
-	fill: #d7d3c3
+	fill: #2e302e
 }
 
 #main-art .cls-37 {
-	fill: #d8d6bb
+	fill: #2e302e
 }
 
 #main-art .cls-38 {
-	stroke: #4d4f4b
+	stroke: #4d4f4b;
+  fill: #2e302e
 }
 
 #main-art .cls-39,
@@ -289,7 +290,7 @@ body {
 }
 
 #main-art .cls-48 {
-	stroke: #de794c
+	stroke: #d9f00d
 }
 
 #main-art .cls-49 {
@@ -297,7 +298,7 @@ body {
 }
 
 #main-art .cls-50 {
-	fill: #f1e298
+	fill: #d9f00d
 }
 
 #main-art .cls-51,
