@@ -29,9 +29,9 @@ body {
 }
 
 #typed-text {
-	font-size: 31px;
-	font-family: 'Brush Script MT', cursive;
-	fill: rgb(219, 212, 212);
+	font-size: 25px;
+	font-family: 'Brush Script MT';
+	fill: rgb(252, 252, 252);
 }
 		
 #main-art .cls-1 {
@@ -624,9 +624,13 @@ body {
 
 .logo {
   width: 110px;
-  position: relative;
-  transform: rotate(-15deg) translate(5px, 40px);
+  position: absolute; 
+  top: 20px;
+  left: 20px;
+  transform: rotate(-15deg);
+  z-index: 1000; 
 }
+
 .logo:before {
   content: "";
   display: block;
@@ -638,6 +642,7 @@ body {
   right: 0;
   border: 1px dashed #eeea08;
   border-radius: 5px;
+  z-index: -1; 
 }
 
 .box {
