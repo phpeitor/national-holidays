@@ -2985,15 +2985,7 @@ function initFeature() {
 }
 
 function initTyped() {
-	const smokeContainer = document.querySelector(".smoke-container");
-	
-	for (let i = 2; i <= 60; i++) {
-		const div = document.createElement("div");
-		div.className = `smoke smoke-${i}`;
-		smokeContainer.appendChild(div);
-	}
-
-    var currentYear = new Date().getFullYear();
+	var currentYear = new Date().getFullYear();
     var options = {
         strings: ['Fiestas Patrias ' + currentYear],
         typeSpeed: 100,
