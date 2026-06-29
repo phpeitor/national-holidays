@@ -9,8 +9,11 @@
   - `index.html`
   - `css/` — hojas de estilo (por ejemplo `style.css`)
   - `js/` — scripts (por ejemplo `script.js`)
+  - `templates/` — parciales HTML/SVG cargados por JavaScript
   - `resources/` — imágenes, fuentes y assets optimizados
 - **Regla**: no mezclar CSS ni JS en archivos HTML; usar archivos dedicados en `css/` y `js/`.
+- **Templates**: mantener el SVG principal dividido en `templates/fusion-app/`; no volver a concentrarlo en `script.js` ni en un unico `fusion-app.html` gigante.
+- **Orden de carga**: registrar cada parcial nuevo en `templateParts` dentro de `js/script.js`, respetando el orden visual del SVG.
 
 ## HTML
 - **Idioma**: usar `lang="es"` en la etiqueta `<html>`.
@@ -28,6 +31,7 @@
 ## JavaScript
 - **Vanilla**: preferir JavaScript ligero sin frameworks adicionales a menos que sea necesario.
 - **Modularidad**: organizar código en funciones pequeñas y reutilizables.
+- **Carga de templates**: `script.js` debe encargarse de cargar y ensamblar parciales, no de almacenar grandes strings de HTML/SVG.
 - **Eventos**: delegar eventos cuando aplique para mejorar rendimiento.
 - **Degradado**: implementar fallbacks si una API no está disponible.
 
