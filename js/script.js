@@ -62,7 +62,7 @@ function initFeature() {
 										<ellipse cx="0" cy="0" rx="30" ry="15"></ellipse><ellipse cx="28" cy="-7" rx="27" ry="14"></ellipse><ellipse cx="60" cy="1" rx="36" ry="17"></ellipse>
 									</g>
 								</g>
-								<text id="typed-text" x="1128" y="38" text-anchor="end"></text>
+								<text id="patriotic-title" x="1128" y="38" text-anchor="end">Fiestas Patrias <tspan id="year-count">1821</tspan></text>
 								<g id="colour-ground">
 									<rect class="cls-1" height="389.651" width="1233.597" x="-38.877" y="354.921"></rect>
 									<rect class="cls-2" height="214.477" width="1471.427" x="-53.878" y="545.098"></rect>
@@ -2605,13 +2605,14 @@ function initFeature() {
 									<polygon class="cls-64" points="412.167 204.542 413.939 198.323 415.046 198.116 421.625 202.959 422.042 203.923 420.458 210.459 419.479 210.715 412.879 205.69 412.167 204.542"></polygon>
 									<polygon class="cls-99" points="414.742 204.86 415.443 200.853 419.073 203.709 418.465 207.584 414.742 204.86"></polygon>
 									<g id="horse-mane">
+									<animateTransform attributeName="transform" type="translate" values="0 -4; 0 7; 0 -4" dur="1.05s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"></animateTransform>
 									<path class="cls-100" d="M369.716,116.836a9.347,9.347,0,0,1-2.233-7.567l10.1-16.6,1.083,1S371.372,109.25,369.716,116.836Z"></path>
 									<path class="cls-100" d="M404.841,114.435l6.317,10.041s15.485-21.186,17.507-26.081C428.653,98.42,405.637,115.544,404.841,114.435Z"></path>
 									<path class="cls-100" d="M382.892,109.67a23.956,23.956,0,0,1-1.688,14.523,25.4,25.4,0,0,1,7.367,10.934c0,.016,2.263,7.289,1.1,13.872l2.75-.666a36.731,36.731,0,0,0,.651-8.385c.034.057,3.6,6.134,9.849,7.218l5.585-3.593s-7.835-1.491-12.669-10.407c.083-.167,8.916,9.25,26.416,8.083l5.5-12.187s-11.042.187-15.312-1.688c.105.368-4.927-10.7-10.6-16.622C401.64,110.556,392.783,113.674,382.892,109.67Z"></path>
+									</g>
 									<path class="cls-101" d="M319.192,217.329s-24.442-37.914-2.939-82.2c-.135.136-16.057,16.7-18.124,30.11.02-.075-3.51,15.054-1.507,25.6.067-.449,2.464-14.586,7.359-21.4.144.064-3.021,18.659-2.125,29.611.025.058-1.522,28.694.311,35.011a22.985,22.985,0,0,0,3.965-4.371c.368-.062-.278,17.586,2.858,26.387l3.886,2.426s5.3,18.173,12.525,24.12C325.4,282.62,318,237,319.192,217.329Z"></path>
 									<path class="cls-101" d="M306.834,145.45a31.712,31.712,0,0,1,4.384-5.582c-.127.123.157-6.824,8.282-17.4.03-.021-9.5,6.562-13.5,13.858C306,136.329,306.167,143.274,306.834,145.45Z"></path>
 									<path class="cls-71" d="M345.934,175.444s11.088,61.239,72.077,66.147c-.072.7-12.913-9.569-24.837-41.83l-10.15-7.4s-10.259,6.655-21.343,2.325C361.75,194.5,348.117,187.638,345.934,175.444Z"></path>
-									</g>
 									<path class="cls-100" d="M428.878,472.122s-10.259-11-20.619-8c.037-.025-15.155,10.059-19.332,25.342,0,.011-3.228,10.783-1.64,19.283-.06-.1,10.588-8.875,22.588-12.75,0,0-5.539-8.356.168-14.678.332-.072,4.207-5.572,9.582-1.7C419.625,479.625,425.463,474.14,428.878,472.122Z"></path>
 									<path class="cls-102" d="M387.287,509.372A55.8,55.8,0,0,1,409.875,496l4.75,1.25a128.079,128.079,0,0,1,7.5,15.5s-9.25,22.5-25.75,28.5C396.375,541.25,388.824,529.619,387.287,509.372Z"></path>
 									<path class="cls-102" d="M321.332,562.756s8.081-7.793,15.812-8.712l5.356,1.331,8.375,14.125s-14.75,32.25-20.375,26.375C330.5,595.875,322.663,577.637,321.332,562.756Z"></path>
@@ -3057,17 +3058,30 @@ function initFeature() {
 	})
 }
 
-function initTyped() {
+function initYearCountdown() {
 	var currentYear = new Date().getFullYear();
-    var options = {
-        strings: ['Fiestas Patrias ' + currentYear],
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 1500,
-        startDelay: 1000,
-        loop: true
-    };
-    new Typed('#typed-text', options);
+	var yearEl = document.getElementById('year-count');
+	if (!yearEl) return;
+
+	var startYear = 1821;
+	var duration = 2200;
+	var startTime = null;
+
+	function updateYear(timestamp) {
+		if (!startTime) startTime = timestamp;
+		var progress = Math.min((timestamp - startTime) / duration, 1);
+		var easedProgress = 1 - Math.pow(1 - progress, 3);
+		var year = Math.floor(startYear + (currentYear - startYear) * easedProgress);
+		yearEl.textContent = year;
+
+		if (progress < 1) {
+			requestAnimationFrame(updateYear);
+		} else {
+			yearEl.textContent = currentYear;
+		}
+	}
+
+	requestAnimationFrame(updateYear);
 }
 
 function openImageLightbox(imageSrc, imageAlt, triggerElement) {
@@ -3137,7 +3151,7 @@ function openImageLightbox(imageSrc, imageAlt, triggerElement) {
 
 document.addEventListener("DOMContentLoaded", function() {
     initFeature(); 
-    initTyped();   
+	initYearCountdown();   
 	
 	const logoEl = document.querySelector('.logo');
 	if (!logoEl) return;

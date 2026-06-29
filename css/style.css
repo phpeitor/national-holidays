@@ -15,7 +15,7 @@ body {
   background: #101522;
 }
 
-#typed-text {
+#patriotic-title {
 	font-size: 17px;
 	font-family: 'Cinzel', 'Trajan Pro', Georgia, serif;
 	font-weight: 700;
@@ -783,7 +783,6 @@ body {
 #horse-mane {
   transform-box: fill-box;
   transform-origin: 82% 18%;
-  animation: maneBounce 1.15s ease-in-out infinite alternate;
 }
 
 @keyframes starTwinkle {
@@ -822,11 +821,6 @@ body {
 @keyframes mouthSmokeLine {
   from { transform: translate(-3px, 2px) scale(0.96); opacity: 0.42; }
   to { transform: translate(12px, -7px) scale(1.08); opacity: 0.95; }
-}
-
-@keyframes maneBounce {
-  from { transform: translateY(-3px) skewX(-1deg); }
-  to { transform: translateY(5px) skewX(1deg); }
 }
 
 #horse-tail {
@@ -956,7 +950,7 @@ body {
     left: 10px;
   }
 
-  #typed-text {
+  #patriotic-title {
     font-size: 14px;
   }
 }
