@@ -3064,8 +3064,10 @@ function initYearCountdown() {
 	if (!yearEl) return;
 
 	var startYear = 1821;
+	var initialDelay = 900;
 	var duration = 2200;
 	var startTime = null;
+	yearEl.textContent = startYear;
 
 	function updateYear(timestamp) {
 		if (!startTime) startTime = timestamp;
@@ -3081,7 +3083,9 @@ function initYearCountdown() {
 		}
 	}
 
-	requestAnimationFrame(updateYear);
+	setTimeout(function() {
+		requestAnimationFrame(updateYear);
+	}, initialDelay);
 }
 
 function openImageLightbox(imageSrc, imageAlt, triggerElement) {
