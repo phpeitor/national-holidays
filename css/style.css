@@ -36,6 +36,39 @@ body {
 	fill: #404f55
 }
 
+#main-art #back-building .cls-4,
+#main-art #back-building .cls-5,
+#main-art #back-building .cls-8,
+#main-art #back-building .cls-11,
+#main-art #back-building .cls-14,
+#main-art #back-building .cls-18 {
+  fill: #253841;
+}
+
+#main-art #back-building .cls-6,
+#main-art #back-building .cls-9,
+#main-art #back-building .cls-12,
+#main-art #back-building .cls-16 {
+  fill: #748186;
+}
+
+#main-art #back-building .cls-7,
+#main-art #back-building .cls-10,
+#main-art #back-building .cls-13,
+#main-art #back-building .cls-15,
+#main-art #back-building .cls-17,
+#main-art #back-building .cls-19 {
+  fill: #c8d1d0;
+}
+
+#main-art #back-building .cls-20 {
+  stroke: #d7dddd;
+}
+
+#main-art #back-building .back-cloud {
+  fill: #595a59;
+}
+
 #main-art .cls-106,
 #main-art .cls-107,
 #main-art .cls-108,
