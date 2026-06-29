@@ -726,6 +726,26 @@ body {
   animation-delay: 1.6s;
 }
 
+.haze-wisp {
+  fill: none;
+  stroke: rgba(245, 246, 236, 0.42);
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 54 34;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hazeWisp 4.8s ease-in-out infinite alternate;
+  filter: blur(0.3px);
+}
+
+.haze-wisp--two {
+  animation-delay: 0.9s;
+}
+
+.haze-wisp--three {
+  animation-delay: 1.8s;
+}
+
 #held-flag path {
   transform-box: fill-box;
   transform-origin: left center;
@@ -772,6 +792,11 @@ body {
   transform-box: fill-box;
   transform-origin: 2% 58%;
   animation: tailSway 1.05s ease-in-out infinite alternate;
+}
+
+@keyframes hazeWisp {
+  from { opacity: 0.22; stroke-dashoffset: 36; transform: translateX(-20px); }
+  to { opacity: 0.58; stroke-dashoffset: -28; transform: translateX(28px); }
 }
 
 @keyframes tailSway {
