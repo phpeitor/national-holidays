@@ -17,7 +17,9 @@ body {
 
 #typed-text {
 	font-size: 17px;
-	font-family: 'Brush Script MT';
+	font-family: 'Cinzel', 'Trajan Pro', Georgia, serif;
+	font-weight: 700;
+	letter-spacing: 1.8px;
 	fill: rgb(252, 252, 252);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
 }
@@ -686,10 +688,25 @@ body {
   animation-delay: 1.4s;
 }
 
+.haze {
+  fill: rgba(230, 232, 220, 0.16);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: groundHaze 6.5s ease-in-out infinite alternate;
+}
+
+.haze--two {
+  animation-delay: 1.1s;
+}
+
+.haze--three {
+  animation-delay: 2s;
+}
+
 #held-flag path {
   transform-box: fill-box;
   transform-origin: left center;
-  animation: heldFlagWave 1.35s ease-in-out infinite alternate;
+  animation: heldFlagWave 1.45s ease-in-out infinite alternate;
 }
 
 #held-flag path:nth-child(2) {
@@ -717,9 +734,25 @@ body {
   to { opacity: 0.78; transform: translateX(14px) scale(1.06); }
 }
 
+@keyframes groundHaze {
+  from { opacity: 0.08; transform: translateX(-10px) scaleX(0.94); }
+  to { opacity: 0.2; transform: translateX(16px) scaleX(1.08); }
+}
+
 @keyframes heldFlagWave {
-  from { transform: skewY(-1deg) translateY(-1px); }
-  to { transform: skewY(4deg) translateY(2px); }
+  from { transform: skewY(-0.8deg) translateY(-1px); }
+  to { transform: skewY(3deg) translateY(1.5px); }
+}
+
+#horse-tail {
+  transform-box: fill-box;
+  transform-origin: 2% 58%;
+  animation: tailSway 2.1s ease-in-out infinite alternate;
+}
+
+@keyframes tailSway {
+  from { transform: rotate(-1.4deg) translateX(-1px); }
+  to { transform: rotate(2deg) translateX(2px); }
 }
 
 .logo{
