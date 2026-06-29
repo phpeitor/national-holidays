@@ -48,7 +48,7 @@ function initFeature() {
 										<ellipse cx="0" cy="0" rx="30" ry="15"></ellipse><ellipse cx="28" cy="-7" rx="27" ry="14"></ellipse><ellipse cx="60" cy="1" rx="36" ry="17"></ellipse>
 									</g>
 								</g>
-								<text id="typed-text" x="10" y="86" ></text>
+								<text id="typed-text" x="1128" y="38" text-anchor="end"></text>
 								<g id="colour-ground">
 									<rect class="cls-1" height="389.651" width="1233.597" x="-38.877" y="354.921"></rect>
 									<rect class="cls-2" height="214.477" width="1471.427" x="-53.878" y="545.098"></rect>
@@ -2540,7 +2540,7 @@ function initFeature() {
 									
 									<path d="M459.642,96.973s3.19,5.536,7.149,6.407L513.1,27.362s3.292-6.269-1.465-8.628c-.3-.143-5.107-2.8-9.049,4.016Z" fill="brown"></path>
 									
-									<g transform="translate(503, 16) skewY(20) ">
+									<g id="held-flag" transform="translate(503, 16) skewY(20) ">
 										<path d="M10,0 Q20,10 30,0 Q40,-10 50,0 Q60,10 70,0 L70,30 Q60,40 50,30 Q40,20 30,30 Q20,40 10,30 Z" fill="red" stroke="black" stroke-width="2"></path>
 										<path d="M70,0 Q80,10 90,0 Q100,-10 110,0 Q120,10 130,0 L130,30 Q120,40 110,30 Q100,20 90,30 Q80,40 70,30 Z" fill="white" stroke="black" stroke-width="2"></path>
 										<path d="M130,0 Q140,10 150,0 Q160,-10 170,0 Q180,10 190,0 L190,30 Q180,40 170,30 Q160,20 150,30 Q140,40 130,30 Z" fill="red" stroke="black" stroke-width="2"></path>
@@ -2941,14 +2941,6 @@ function initFeature() {
 									<path class="cls-126" d="M541.946,153.667s20.971-1.042,28.554,10.073c-.042.01,4.833,6.26,3.5,14.26"></path>
 									<path class="cls-66" d="M551.624,264.377s-26,36.623-34.249,59.5c0,0-3.125,5.75,2.125,13,.125.25,12.375,17.375,12.375,17.375"></path>
 									<path class="cls-139" d="M608.154,429.529a18.245,18.245,0,0,0-2.987-9.2c-1-1.417-3.167-5.5-3.167-5.5C597.5,405.666,591.167,386,591.167,386c-11.334-32.5-22.542-45.875-22.542-46-28.25-4-37.75,15.874-37.75,15.874a238.158,238.158,0,0,0,22.458,28.292l6.263,7.42a126.631,126.631,0,0,1,13.39,20.066"></path>
-								</g>
-								<g id="waving-flag" transform="translate(500 88) rotate(28)">
-									<line class="flag-pole" x1="0" y1="0" x2="0" y2="112"></line>
-									<g class="flag-cloth">
-										<path class="flag-red" d="M0 0 C24 -16 44 14 68 0 S110 -5 136 8 L136 32 C110 19 92 40 68 24 S24 8 0 24 Z"></path>
-										<path class="flag-white" d="M0 24 C24 8 44 38 68 24 S110 19 136 32 L136 56 C110 43 92 64 68 48 S24 32 0 48 Z"></path>
-										<path class="flag-red" d="M0 48 C24 32 44 62 68 48 S110 43 136 56 L136 80 C110 67 92 88 68 72 S24 56 0 72 Z"></path>
-									</g>
 								</g>
 							</svg>
 						</section>

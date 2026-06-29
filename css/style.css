@@ -16,9 +16,10 @@ body {
 }
 
 #typed-text {
-	font-size: 25px;
+	font-size: 17px;
 	font-family: 'Brush Script MT';
 	fill: rgb(252, 252, 252);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
 }
 		
 #main-art .cls-1 {
@@ -685,33 +686,18 @@ body {
   animation-delay: 1.4s;
 }
 
-#waving-flag {
-  transform-box: fill-box;
-  transform-origin: 0 100%;
-}
-
-.flag-pole {
-  stroke: #241815;
-  stroke-width: 6;
-  stroke-linecap: round;
-}
-
-.flag-cloth {
+#held-flag path {
   transform-box: fill-box;
   transform-origin: left center;
-  animation: flagWave 1.25s ease-in-out infinite alternate;
+  animation: heldFlagWave 1.35s ease-in-out infinite alternate;
 }
 
-.flag-red {
-  fill: #e20b12;
-  stroke: #160909;
-  stroke-width: 1.5;
+#held-flag path:nth-child(2) {
+  animation-delay: 0.12s;
 }
 
-.flag-white {
-  fill: #fff8ef;
-  stroke: #160909;
-  stroke-width: 1.5;
+#held-flag path:nth-child(3) {
+  animation-delay: 0.24s;
 }
 
 @keyframes starTwinkle {
@@ -731,9 +717,9 @@ body {
   to { opacity: 0.78; transform: translateX(14px) scale(1.06); }
 }
 
-@keyframes flagWave {
-  from { transform: skewY(-2deg) translateY(-1px); }
-  to { transform: skewY(5deg) translateY(2px); }
+@keyframes heldFlagWave {
+  from { transform: skewY(-1deg) translateY(-1px); }
+  to { transform: skewY(4deg) translateY(2px); }
 }
 
 .logo{
@@ -848,6 +834,6 @@ body {
   }
 
   #typed-text {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
