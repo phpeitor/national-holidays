@@ -818,11 +818,7 @@ body {
 #horse-tail {
   transform-box: fill-box;
   transform-origin: 2% 58%;
-  animation: tailSway 1.05s ease-in-out infinite alternate;
-}
-
-.detached-tail-fill {
-  fill: #fff;
+  animation: tailSway 1.45s ease-in-out infinite alternate;
 }
 
 @keyframes hazeWisp {
@@ -831,8 +827,8 @@ body {
 }
 
 @keyframes tailSway {
-  from { transform: rotate(-5deg) translate(-5px, -2px) scaleX(0.98); }
-  to { transform: rotate(7deg) translate(8px, 3px) scaleX(1.04); }
+  from { transform: rotate(-1.4deg) translate(-2px, -1px); }
+  to { transform: rotate(2.2deg) translate(3px, 1px); }
 }
 
 .logo{
