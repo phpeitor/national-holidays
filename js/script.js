@@ -21,6 +21,10 @@ function initFeature() {
 											<feMergeNode in="SourceGraphic"></feMergeNode>
 										</feMerge>
 									</filter>
+									<mask id="horse-body-mask" maskUnits="userSpaceOnUse">
+										<rect x="0" y="0" width="1195" height="739" fill="white"></rect>
+										<path class="tail-mask-cutout" d="M739 299 C776 289 802 260 821 224 C846 191 895 194 934 221 C964 242 986 267 1020 280 C982 293 949 281 919 257 C891 235 859 233 834 254 C805 278 781 305 739 299 Z" fill="black"></path>
+									</mask>
 								</defs>
 								<g id="animated-sky">
 									<rect class="sky-fill" x="-40" y="-9" width="1280" height="770"></rect>
@@ -2791,6 +2795,7 @@ function initFeature() {
 									<path class="cls-122" d="M520.433,94.334s12.667-4.417,9.833-22.084"></path>
 									<path class="cls-120" d="M538.827,71.174c0-.25,1.856,19.393,16.441,17.409"></path>
 									<g id="horse-tail">
+									<path class="detached-tail-fill" d="M743.5,296.5 C776,286 800,258 817,225 C842,195 889,199 927,224 C956,243 976,269 1009,278 C977,286 948,277 921,256 C891,234 857,231 831,252 C801,277 781,303 743.5,296.5Z"></path>
 									<path class="cls-110" d="M743.287,296.316s-1.119-8.274,13.338-9.066c0,0,24.625-1.5,28.5-1.875.125,0,17-1.875,15-17.875,0-.25-1.791-11-3.958-22.333.166.167-9.333-35.5,13.5-53.167.166,0,26.249-24.166,64-9.5,0,0,30.334,10.834,54,40.667l11.583,14.151s24.5,32.807,53.125,28.057"></path>
 									<path class="cls-110" d="M981.032,265.412c-22.532,17.463-64.407-19.162-64.407-19.162-19.375-14.5-30.75-9.25-30.875-9.5-16.51,5.748-7.625,30.5-7.625,30.625,6.75,21.875,1.5,34.5,1.375,34.5-9.375,22.5-37.625,23.75-37.625,23.75-29.5,1.5-59-13.25-59-13.25s-17.5-8-17.625-8c-13.875-5.875-18.486-3.053-18.486-3.053s7.362-5.905,30.987,4.095c0,0,10.874,4.583,13.5,5.833,0,0,21.333,10.417,40.583,10.882"></path>
 									<path class="cls-110" d="M837.75,322.125s30.071,1.127,40.625-25.125c0,0,2.812-5.5,2.355-18.247"></path>
@@ -2974,7 +2979,7 @@ function initFeature() {
 									<path class="haze-wisp haze-wisp--one" d="M338 575 C390 548 446 592 502 565 S604 545 664 573"></path>
 									<path class="haze-wisp haze-wisp--two" d="M640 610 C705 578 774 628 848 596 S960 584 1044 612"></path>
 									<path class="haze-wisp haze-wisp--three" d="M455 662 C530 636 600 678 684 648 S824 634 900 660"></path>
-								</g>
+									</g>
 							</svg>
 						</section>
 					</header>
@@ -2987,6 +2992,11 @@ function initFeature() {
 			</div>
 		</div>
     `;
+
+	const horseBodyShape = fusionApp.querySelector('#horse-mountie path.cls-64');
+	if (horseBodyShape) {
+		horseBodyShape.setAttribute('mask', 'url(#horse-body-mask)');
+	}
 
 	function t(e, t, n) {
 		var a = screen.width / 2 - t / 2,

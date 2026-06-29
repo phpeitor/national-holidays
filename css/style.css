@@ -821,6 +821,10 @@ body {
   animation: tailSway 1.05s ease-in-out infinite alternate;
 }
 
+.detached-tail-fill {
+  fill: #fff;
+}
+
 @keyframes hazeWisp {
   from { opacity: 0.22; stroke-dashoffset: 36; transform: translateX(-20px); }
   to { opacity: 0.58; stroke-dashoffset: -28; transform: translateX(28px); }
