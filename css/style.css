@@ -838,7 +838,7 @@ body {
 
 @media (max-width: 800px) {
   #fusion-app {
-    padding-top: 30vh;
+    padding-top: 0;
   }
 
   .logo {

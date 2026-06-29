@@ -8,6 +8,46 @@ function initFeature() {
 					<header class="gi-header">
 						<section class="gi-art__top">
 							<svg id="main-art" viewBox="0 -9 1195 739" xmlns="http://www.w3.org/2000/svg">
+								<defs>
+									<linearGradient id="patriotic-sky" x1="0" x2="0" y1="0" y2="1">
+										<stop offset="0" stop-color="#101522"></stop>
+										<stop offset="0.58" stop-color="#31444c"></stop>
+										<stop offset="1" stop-color="#54666e"></stop>
+									</linearGradient>
+									<filter id="soft-glow" x="-60%" y="-60%" width="220%" height="220%">
+										<feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+										<feMerge>
+											<feMergeNode in="blur"></feMergeNode>
+											<feMergeNode in="SourceGraphic"></feMergeNode>
+										</feMerge>
+									</filter>
+								</defs>
+								<g id="animated-sky">
+									<rect class="sky-fill" x="-40" y="-9" width="1280" height="770"></rect>
+									<circle class="sky-star sky-star--one" cx="165" cy="52" r="1.8"></circle>
+									<circle class="sky-star sky-star--two" cx="724" cy="34" r="1.4"></circle>
+									<circle class="sky-star sky-star--three" cx="1034" cy="86" r="1.7"></circle>
+									<g class="firework firework--one" transform="translate(225 82)" filter="url(#soft-glow)">
+										<circle class="firework-core" r="3"></circle>
+										<line x1="0" y1="-8" x2="0" y2="-38"></line><line x1="0" y1="8" x2="0" y2="38"></line>
+										<line x1="-8" y1="0" x2="-38" y2="0"></line><line x1="8" y1="0" x2="38" y2="0"></line>
+										<line x1="-6" y1="-6" x2="-28" y2="-28"></line><line x1="6" y1="6" x2="28" y2="28"></line>
+										<line x1="6" y1="-6" x2="28" y2="-28"></line><line x1="-6" y1="6" x2="-28" y2="28"></line>
+									</g>
+									<g class="firework firework--two" transform="translate(880 96)" filter="url(#soft-glow)">
+										<circle class="firework-core" r="3"></circle>
+										<line x1="0" y1="-7" x2="0" y2="-32"></line><line x1="0" y1="7" x2="0" y2="32"></line>
+										<line x1="-7" y1="0" x2="-32" y2="0"></line><line x1="7" y1="0" x2="32" y2="0"></line>
+										<line x1="-5" y1="-5" x2="-24" y2="-24"></line><line x1="5" y1="5" x2="24" y2="24"></line>
+										<line x1="5" y1="-5" x2="24" y2="-24"></line><line x1="-5" y1="5" x2="-24" y2="24"></line>
+									</g>
+									<g class="cannon-smoke cannon-smoke--left" transform="translate(95 330)">
+										<ellipse cx="0" cy="0" rx="34" ry="16"></ellipse><ellipse cx="32" cy="-8" rx="28" ry="14"></ellipse><ellipse cx="64" cy="0" rx="38" ry="17"></ellipse>
+									</g>
+									<g class="cannon-smoke cannon-smoke--right" transform="translate(1000 332)">
+										<ellipse cx="0" cy="0" rx="30" ry="15"></ellipse><ellipse cx="28" cy="-7" rx="27" ry="14"></ellipse><ellipse cx="60" cy="1" rx="36" ry="17"></ellipse>
+									</g>
+								</g>
 								<text id="typed-text" x="10" y="86" ></text>
 								<g id="colour-ground">
 									<rect class="cls-1" height="389.651" width="1233.597" x="-38.877" y="354.921"></rect>
@@ -2901,6 +2941,14 @@ function initFeature() {
 									<path class="cls-126" d="M541.946,153.667s20.971-1.042,28.554,10.073c-.042.01,4.833,6.26,3.5,14.26"></path>
 									<path class="cls-66" d="M551.624,264.377s-26,36.623-34.249,59.5c0,0-3.125,5.75,2.125,13,.125.25,12.375,17.375,12.375,17.375"></path>
 									<path class="cls-139" d="M608.154,429.529a18.245,18.245,0,0,0-2.987-9.2c-1-1.417-3.167-5.5-3.167-5.5C597.5,405.666,591.167,386,591.167,386c-11.334-32.5-22.542-45.875-22.542-46-28.25-4-37.75,15.874-37.75,15.874a238.158,238.158,0,0,0,22.458,28.292l6.263,7.42a126.631,126.631,0,0,1,13.39,20.066"></path>
+								</g>
+								<g id="waving-flag" transform="translate(500 88) rotate(28)">
+									<line class="flag-pole" x1="0" y1="0" x2="0" y2="112"></line>
+									<g class="flag-cloth">
+										<path class="flag-red" d="M0 0 C24 -16 44 14 68 0 S110 -5 136 8 L136 32 C110 19 92 40 68 24 S24 8 0 24 Z"></path>
+										<path class="flag-white" d="M0 24 C24 8 44 38 68 24 S110 19 136 32 L136 56 C110 43 92 64 68 48 S24 32 0 48 Z"></path>
+										<path class="flag-red" d="M0 48 C24 32 44 62 68 48 S110 43 136 56 L136 80 C110 67 92 88 68 72 S24 56 0 72 Z"></path>
+									</g>
 								</g>
 							</svg>
 						</section>
