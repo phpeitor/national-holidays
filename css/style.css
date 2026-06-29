@@ -660,16 +660,24 @@ body {
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
-  animation: fireworkPop 3.6s ease-out infinite;
+  animation: fireworkPop 4.6s ease-out infinite;
 }
 
 .firework--two {
-  animation-delay: 1.25s;
+  animation-delay: 1.05s;
+}
+
+.firework--three {
+  animation-delay: 2.1s;
+}
+
+.firework--four {
+  animation-delay: 3.15s;
 }
 
 .firework line {
   stroke: #fff7d6;
-  stroke-width: 3;
+  stroke-width: 3.8;
   stroke-linecap: round;
 }
 
@@ -689,10 +697,11 @@ body {
 }
 
 .haze {
-  fill: rgba(230, 232, 220, 0.16);
+  fill: rgba(235, 238, 226, 0.3);
   transform-box: fill-box;
   transform-origin: center;
-  animation: groundHaze 6.5s ease-in-out infinite alternate;
+  animation: groundHaze 5.5s ease-in-out infinite alternate;
+  filter: blur(0.5px);
 }
 
 .haze--two {
@@ -701,6 +710,20 @@ body {
 
 .haze--three {
   animation-delay: 2s;
+}
+
+.haze--front-one,
+.haze--front-two,
+.haze--front-three {
+  fill: rgba(238, 241, 230, 0.24);
+}
+
+.haze--front-two {
+  animation-delay: 0.8s;
+}
+
+.haze--front-three {
+  animation-delay: 1.6s;
 }
 
 #held-flag path {
@@ -723,10 +746,11 @@ body {
 }
 
 @keyframes fireworkPop {
-  0% { opacity: 0; transform: scale(0.18) rotate(0deg); }
-  12% { opacity: 1; transform: scale(1) rotate(14deg); }
-  34% { opacity: 0; transform: scale(1.35) rotate(24deg); }
-  100% { opacity: 0; transform: scale(1.35) rotate(24deg); }
+  0% { opacity: 0; transform: scale(0.12) rotate(0deg); }
+  10% { opacity: 1; transform: scale(1.08) rotate(14deg); }
+  28% { opacity: 0.8; transform: scale(1.28) rotate(22deg); }
+  48% { opacity: 0; transform: scale(1.48) rotate(30deg); }
+  100% { opacity: 0; transform: scale(1.48) rotate(30deg); }
 }
 
 @keyframes smokeDrift {
@@ -735,8 +759,8 @@ body {
 }
 
 @keyframes groundHaze {
-  from { opacity: 0.08; transform: translateX(-10px) scaleX(0.94); }
-  to { opacity: 0.2; transform: translateX(16px) scaleX(1.08); }
+  from { opacity: 0.18; transform: translateX(-18px) scaleX(0.9); }
+  to { opacity: 0.38; transform: translateX(24px) scaleX(1.14); }
 }
 
 @keyframes heldFlagWave {
@@ -747,12 +771,12 @@ body {
 #horse-tail {
   transform-box: fill-box;
   transform-origin: 2% 58%;
-  animation: tailSway 2.1s ease-in-out infinite alternate;
+  animation: tailSway 1.05s ease-in-out infinite alternate;
 }
 
 @keyframes tailSway {
-  from { transform: rotate(-1.4deg) translateX(-1px); }
-  to { transform: rotate(2deg) translateX(2px); }
+  from { transform: rotate(-5deg) translate(-5px, -2px) scaleX(0.98); }
+  to { transform: rotate(7deg) translate(8px, 3px) scaleX(1.04); }
 }
 
 .logo{

@@ -41,6 +41,20 @@ function initFeature() {
 										<line x1="-5" y1="-5" x2="-24" y2="-24"></line><line x1="5" y1="5" x2="24" y2="24"></line>
 										<line x1="5" y1="-5" x2="24" y2="-24"></line><line x1="-5" y1="5" x2="-24" y2="24"></line>
 									</g>
+									<g class="firework firework--three" transform="translate(560 68)" filter="url(#soft-glow)">
+										<circle class="firework-core" r="2.5"></circle>
+										<line x1="0" y1="-6" x2="0" y2="-28"></line><line x1="0" y1="6" x2="0" y2="28"></line>
+										<line x1="-6" y1="0" x2="-28" y2="0"></line><line x1="6" y1="0" x2="28" y2="0"></line>
+										<line x1="-4" y1="-4" x2="-20" y2="-20"></line><line x1="4" y1="4" x2="20" y2="20"></line>
+										<line x1="4" y1="-4" x2="20" y2="-20"></line><line x1="-4" y1="4" x2="-20" y2="20"></line>
+									</g>
+									<g class="firework firework--four" transform="translate(1070 130)" filter="url(#soft-glow)">
+										<circle class="firework-core" r="2.8"></circle>
+										<line x1="0" y1="-7" x2="0" y2="-34"></line><line x1="0" y1="7" x2="0" y2="34"></line>
+										<line x1="-7" y1="0" x2="-34" y2="0"></line><line x1="7" y1="0" x2="34" y2="0"></line>
+										<line x1="-5" y1="-5" x2="-25" y2="-25"></line><line x1="5" y1="5" x2="25" y2="25"></line>
+										<line x1="5" y1="-5" x2="25" y2="-25"></line><line x1="-5" y1="5" x2="-25" y2="25"></line>
+									</g>
 									<g class="cannon-smoke cannon-smoke--left" transform="translate(95 330)">
 										<ellipse cx="0" cy="0" rx="34" ry="16"></ellipse><ellipse cx="32" cy="-8" rx="28" ry="14"></ellipse><ellipse cx="64" cy="0" rx="38" ry="17"></ellipse>
 									</g>
@@ -2948,6 +2962,11 @@ function initFeature() {
 									<path class="cls-126" d="M541.946,153.667s20.971-1.042,28.554,10.073c-.042.01,4.833,6.26,3.5,14.26"></path>
 									<path class="cls-66" d="M551.624,264.377s-26,36.623-34.249,59.5c0,0-3.125,5.75,2.125,13,.125.25,12.375,17.375,12.375,17.375"></path>
 									<path class="cls-139" d="M608.154,429.529a18.245,18.245,0,0,0-2.987-9.2c-1-1.417-3.167-5.5-3.167-5.5C597.5,405.666,591.167,386,591.167,386c-11.334-32.5-22.542-45.875-22.542-46-28.25-4-37.75,15.874-37.75,15.874a238.158,238.158,0,0,0,22.458,28.292l6.263,7.42a126.631,126.631,0,0,1,13.39,20.066"></path>
+								</g>
+								<g id="foreground-haze">
+									<ellipse class="haze haze--front-one" cx="520" cy="645" rx="120" ry="18"></ellipse>
+									<ellipse class="haze haze--front-two" cx="760" cy="635" rx="150" ry="20"></ellipse>
+									<ellipse class="haze haze--front-three" cx="990" cy="650" rx="130" ry="18"></ellipse>
 								</g>
 							</svg>
 						</section>
