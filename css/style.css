@@ -4,6 +4,7 @@
 
 html, body {
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 body {
@@ -11,18 +12,7 @@ body {
   padding: 0;
   overflow-x: hidden; 
   overflow-y: auto;   
-}
-
-#video-background {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -1; 
-	object-fit: cover;
+  background: #101522;
 }
 
 #typed-text {
@@ -621,11 +611,129 @@ body {
 #fusion-app {
   max-width: 100%;
   width: 100%;
-  padding: 4vh 2vw; 
+  min-height: 100vh;
+  padding: 0; 
   box-sizing: border-box;
+  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow-x: hidden;
+}
+
+.l-ghost,
+.l-interactive,
+.gi,
+.gi-header,
+.gi-art__top {
+  width: 100%;
+}
+
+#main-art {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: #101522;
+}
+
+.sky-fill {
+  fill: url(#patriotic-sky);
+}
+
+.sky-star {
+  fill: #fff6df;
+  opacity: 0.5;
+  animation: starTwinkle 2.8s ease-in-out infinite alternate;
+}
+
+.sky-star--two {
+  animation-delay: 0.8s;
+}
+
+.sky-star--three {
+  animation-delay: 1.5s;
+}
+
+.firework {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fireworkPop 3.6s ease-out infinite;
+}
+
+.firework--two {
+  animation-delay: 1.25s;
+}
+
+.firework line {
+  stroke: #fff7d6;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.firework .firework-core {
+  fill: #ff2c22;
+}
+
+.cannon-smoke {
+  fill: rgba(32, 34, 32, 0.65);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: smokeDrift 5.8s ease-in-out infinite alternate;
+}
+
+.cannon-smoke--right {
+  animation-delay: 1.4s;
+}
+
+#waving-flag {
+  transform-box: fill-box;
+  transform-origin: 0 100%;
+}
+
+.flag-pole {
+  stroke: #241815;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.flag-cloth {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: flagWave 1.25s ease-in-out infinite alternate;
+}
+
+.flag-red {
+  fill: #e20b12;
+  stroke: #160909;
+  stroke-width: 1.5;
+}
+
+.flag-white {
+  fill: #fff8ef;
+  stroke: #160909;
+  stroke-width: 1.5;
+}
+
+@keyframes starTwinkle {
+  from { opacity: 0.25; }
+  to { opacity: 0.95; }
+}
+
+@keyframes fireworkPop {
+  0% { opacity: 0; transform: scale(0.18) rotate(0deg); }
+  12% { opacity: 1; transform: scale(1) rotate(14deg); }
+  34% { opacity: 0; transform: scale(1.35) rotate(24deg); }
+  100% { opacity: 0; transform: scale(1.35) rotate(24deg); }
+}
+
+@keyframes smokeDrift {
+  from { opacity: 0.5; transform: translateX(-8px) scale(0.96); }
+  to { opacity: 0.78; transform: translateX(14px) scale(1.06); }
+}
+
+@keyframes flagWave {
+  from { transform: skewY(-2deg) translateY(-1px); }
+  to { transform: skewY(5deg) translateY(2px); }
 }
 
 .logo{
