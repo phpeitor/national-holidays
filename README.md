@@ -2,18 +2,14 @@
 [![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://www.linkedin.com/in/drphp/)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
-Una landing animada para celebrar las Fiestas Patrias del Peru. El proyecto esta construido con HTML, CSS y JavaScript vanilla, usando SVG para la ilustracion principal y animaciones ligeras para dar vida a la escena.
-
-## Vista Previa
-
 [![Video](https://img.youtube.com/vi/TRq8Ie4ubVU/0.jpg)](https://www.youtube.com/watch?v=TRq8Ie4ubVU)
 
-[Ver demo en YouTube](https://www.youtube.com/watch?v=TRq8Ie4ubVU)
+[![Video Demo](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=TRq8Ie4ubVU)
 
 ## Caracteristicas
 
 - Ilustracion SVG animada con escena patriotica.
-- Countdown automatico desde 1821 hasta el ano actual.
+- Countdown automatico desde 1821.
 - Animaciones de humo, fuegos artificiales, bandera, caballo y ambiente.
 - Lightbox para visualizar el logo.
 - Estructura simple sin frameworks ni proceso de build.
@@ -30,7 +26,18 @@ national-holidays/
 ├── resources/
 │   └── logo.png
 ├── templates/
-│   └── fusion-app.html
+│   └── fusion-app/
+│       ├── shell-open.html
+│       ├── defs-and-sky.html
+│       ├── ground.html
+│       ├── back-building.html
+│       ├── front-building.html
+│       ├── background.html
+│       ├── middleground.html
+│       ├── foreground.html
+│       ├── horse-mountie.html
+│       ├── foreground-haze.html
+│       └── shell-close.html
 └── index.html
 ```
 
@@ -60,5 +67,5 @@ npx serve .
 ## Notas
 
 - No requiere instalacion de dependencias.
-- `templates/fusion-app.html` contiene el SVG principal para mantener `js/script.js` mas limpio.
-- `js/script.js` inicializa la plantilla, las animaciones y las interacciones.
+- `templates/fusion-app/` divide el SVG principal en parciales para evitar un archivo HTML gigante.
+- `js/script.js` carga esos parciales, arma la escena e inicializa las animaciones e interacciones.

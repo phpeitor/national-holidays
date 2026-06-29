@@ -2,14 +2,29 @@ function initFeature() {
 						
 	const fusionApp = document.getElementById("fusion-app");
 	if (!fusionApp) return Promise.resolve();
+	var templateVersion = "v1.11";
+	var templateParts = [
+		"shell-open",
+		"defs-and-sky",
+		"ground",
+		"back-building",
+		"front-building",
+		"background",
+		"middleground",
+		"foreground",
+		"horse-mountie",
+		"foreground-haze",
+		"shell-close"
+	];
 
-	return fetch("./templates/fusion-app.html?v1.10")
-		.then(function(response) {
-			if (!response.ok) throw new Error("No se pudo cargar fusion-app.html");
+	return Promise.all(templateParts.map(function(part) {
+		var url = "./templates/fusion-app/" + part + ".html?" + templateVersion;
+		return fetch(url).then(function(response) {
+			if (!response.ok) throw new Error("No se pudo cargar " + url);
 			return response.text();
-		})
-		.then(function(html) {
-			fusionApp.innerHTML = html;
+		});
+	})).then(function(parts) {
+			fusionApp.innerHTML = parts.join("\n");
 			initFeatureInteractions();
 		});
 }
