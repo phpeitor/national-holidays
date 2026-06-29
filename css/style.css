@@ -760,6 +760,23 @@ body {
   animation-delay: 0.24s;
 }
 
+#mouth-smoke {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mouthSmokeDrift 2.4s ease-in-out infinite alternate;
+}
+
+#mouth-smoke .cls-93 {
+  fill: #9da8aa;
+  opacity: 0.7;
+}
+
+#horse-mane {
+  transform-box: fill-box;
+  transform-origin: 82% 18%;
+  animation: maneSway 1.35s ease-in-out infinite alternate;
+}
+
 @keyframes starTwinkle {
   from { opacity: 0.25; }
   to { opacity: 0.95; }
@@ -786,6 +803,16 @@ body {
 @keyframes heldFlagWave {
   from { transform: skewY(-0.8deg) translateY(-1px); }
   to { transform: skewY(3deg) translateY(1.5px); }
+}
+
+@keyframes mouthSmokeDrift {
+  from { opacity: 0.58; transform: translate(-2px, 1px) scale(0.94); }
+  to { opacity: 0.9; transform: translate(7px, -4px) scale(1.16); }
+}
+
+@keyframes maneSway {
+  from { transform: rotate(-1.5deg) translateX(-2px); }
+  to { transform: rotate(2.8deg) translateX(4px); }
 }
 
 #horse-tail {
