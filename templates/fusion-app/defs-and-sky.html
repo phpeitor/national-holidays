@@ -11,12 +11,47 @@
 									<feMergeNode in="SourceGraphic"></feMergeNode>
 								</feMerge>
 							</filter>
+							<filter id="big-glow" x="-80%" y="-80%" width="260%" height="260%">
+								<feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+								<feMerge>
+									<feMergeNode in="blur"></feMergeNode>
+									<feMergeNode in="SourceGraphic"></feMergeNode>
+								</feMerge>
+							</filter>
+							<radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
+								<stop offset="0" stop-color="#fffbe6" stop-opacity="1"></stop>
+								<stop offset="1" stop-color="#fffbe6" stop-opacity="0"></stop>
+							</radialGradient>
 						</defs>
 						<g id="animated-sky">
 							<rect class="sky-fill" x="-40" y="-9" width="1280" height="770"></rect>
-							<circle class="sky-star sky-star--one" cx="165" cy="52" r="1.8"></circle>
-							<circle class="sky-star sky-star--two" cx="724" cy="34" r="1.4"></circle>
-							<circle class="sky-star sky-star--three" cx="1034" cy="86" r="1.7"></circle>
+
+							<!-- big decorative stars in top-left area -->
+							<circle class="sky-star sky-star--one" cx="58" cy="36" r="2.6"></circle>
+							<circle class="sky-star sky-star--two" cx="142" cy="22" r="2.2"></circle>
+							<circle class="sky-star sky-star--three" cx="95" cy="64" r="1.9"></circle>
+							<circle class="sky-star sky-star--four" cx="35" cy="82" r="2.4"></circle>
+							<circle class="sky-star sky-star--five" cx="188" cy="70" r="1.6"></circle>
+
+							<!-- mid-left stars -->
+							<circle class="sky-star sky-star--six" cx="320" cy="44" r="2"></circle>
+							<circle class="sky-star sky-star--seven" cx="450" cy="28" r="1.7"></circle>
+							<circle class="sky-star sky-star--eight" cx="600" cy="55" r="2.2"></circle>
+
+							<!-- right side stars (original positions enhanced) -->
+							<circle class="sky-star sky-star--nine" cx="724" cy="34" r="2"></circle>
+							<circle class="sky-star sky-star--ten" cx="1034" cy="86" r="2.4"></circle>
+							<circle class="sky-star sky-star--eleven" cx="880" cy="50" r="1.8"></circle>
+							<circle class="sky-star sky-star--twelve" cx="1120" cy="28" r="2.1"></circle>
+
+							<!-- star glows around the sky -->
+							<circle class="star-glow" cx="58" cy="36" r="14"></circle>
+							<circle class="star-glow" cx="142" cy="22" r="12"></circle>
+							<circle class="star-glow" cx="95" cy="64" r="10"></circle>
+							<circle class="star-glow" cx="35" cy="82" r="13"></circle>
+							<circle class="star-glow" cx="600" cy="55" r="11"></circle>
+
+							<!-- fireworks near the top (smaller, higher) -->
 							<g class="firework firework--one" transform="translate(225 82)" filter="url(#soft-glow)">
 								<circle class="firework-core" r="3"></circle>
 								<line x1="0" y1="-8" x2="0" y2="-38"></line><line x1="0" y1="8" x2="0" y2="38"></line>
@@ -45,6 +80,58 @@
 								<line x1="-5" y1="-5" x2="-25" y2="-25"></line><line x1="5" y1="5" x2="25" y2="25"></line>
 								<line x1="5" y1="-5" x2="25" y2="-25"></line><line x1="-5" y1="5" x2="-25" y2="25"></line>
 							</g>
+
+							<!-- extra fireworks with varied colors -->
+							<g class="firework-alt firework-alt--one" transform="translate(130 58)" filter="url(#soft-glow)">
+								<circle class="firework-core firework-core--gold" r="3.2"></circle>
+								<line x1="0" y1="-9" x2="0" y2="-42"></line><line x1="0" y1="9" x2="0" y2="42"></line>
+								<line x1="-9" y1="0" x2="-42" y2="0"></line><line x1="9" y1="0" x2="42" y2="0"></line>
+								<line x1="-6" y1="-6" x2="-30" y2="-30"></line><line x1="6" y1="6" x2="30" y2="30"></line>
+								<line x1="6" y1="-6" x2="30" y2="-30"></line><line x1="-6" y1="6" x2="-30" y2="30"></line>
+							</g>
+							<g class="firework-alt firework-alt--two" transform="translate(380 55)" filter="url(#big-glow)">
+								<circle class="firework-core firework-core--red" r="3.5"></circle>
+								<line x1="0" y1="-10" x2="0" y2="-48"></line><line x1="0" y1="10" x2="0" y2="48"></line>
+								<line x1="-10" y1="0" x2="-48" y2="0"></line><line x1="10" y1="0" x2="48" y2="0"></line>
+								<line x1="-7" y1="-7" x2="-34" y2="-34"></line><line x1="7" y1="7" x2="34" y2="34"></line>
+								<line x1="7" y1="-7" x2="34" y2="-34"></line><line x1="-7" y1="7" x2="-34" y2="34"></line>
+							</g>
+							<g class="firework-alt firework-alt--three" transform="translate(740 45)" filter="url(#big-glow)">
+								<circle class="firework-core firework-core--white" r="3.8"></circle>
+								<line x1="0" y1="-11" x2="0" y2="-50"></line><line x1="0" y1="11" x2="0" y2="50"></line>
+								<line x1="-11" y1="0" x2="-50" y2="0"></line><line x1="11" y1="0" x2="50" y2="0"></line>
+								<line x1="-8" y1="-8" x2="-36" y2="-36"></line><line x1="8" y1="8" x2="36" y2="36"></line>
+								<line x1="8" y1="-8" x2="36" y2="-36"></line><line x1="-8" y1="8" x2="-36" y2="36"></line>
+							</g>
+							<g class="firework-alt firework-alt--four" transform="translate(970 62)" filter="url(#soft-glow)">
+								<circle class="firework-core firework-core--gold" r="3"></circle>
+								<line x1="0" y1="-8" x2="0" y2="-36"></line><line x1="0" y1="8" x2="0" y2="36"></line>
+								<line x1="-8" y1="0" x2="-36" y2="0"></line><line x1="8" y1="0" x2="36" y2="0"></line>
+								<line x1="-6" y1="-6" x2="-26" y2="-26"></line><line x1="6" y1="6" x2="26" y2="26"></line>
+								<line x1="6" y1="-6" x2="26" y2="-26"></line><line x1="-6" y1="6" x2="-26" y2="26"></line>
+							</g>
+							<g class="firework-alt firework-alt--five" transform="translate(1150 48)" filter="url(#big-glow)">
+								<circle class="firework-core firework-core--red" r="3.6"></circle>
+								<line x1="0" y1="-10" x2="0" y2="-44"></line><line x1="0" y1="10" x2="0" y2="44"></line>
+								<line x1="-10" y1="0" x2="-44" y2="0"></line><line x1="10" y1="0" x2="44" y2="0"></line>
+								<line x1="-7" y1="-7" x2="-31" y2="-31"></line><line x1="7" y1="7" x2="31" y2="31"></line>
+								<line x1="7" y1="-7" x2="31" y2="-31"></line><line x1="-7" y1="7" x2="-31" y2="31"></line>
+							</g>
+
+							<!-- sparkle trails near the title -->
+							<g class="sparkle sparkle--one" transform="translate(1080 18)">
+								<circle class="sparkle-dot" cx="0" cy="0" r="1.5"></circle>
+								<circle class="sparkle-dot" cx="6" cy="-4" r="1"></circle>
+								<circle class="sparkle-dot" cx="-5" cy="-6" r="0.8"></circle>
+								<circle class="sparkle-dot" cx="3" cy="5" r="1.2"></circle>
+							</g>
+							<g class="sparkle sparkle--two" transform="translate(1140 10)">
+								<circle class="sparkle-dot" cx="0" cy="0" r="1.8"></circle>
+								<circle class="sparkle-dot" cx="7" cy="-3" r="1.2"></circle>
+								<circle class="sparkle-dot" cx="-4" cy="5" r="0.9"></circle>
+							</g>
+
+							<!-- cannon smoke (kept from original) -->
 							<g class="cannon-smoke cannon-smoke--left" transform="translate(95 330)">
 								<ellipse cx="0" cy="0" rx="34" ry="16"></ellipse><ellipse cx="32" cy="-8" rx="28" ry="14"></ellipse><ellipse cx="64" cy="0" rx="38" ry="17"></ellipse>
 							</g>

@@ -107,26 +107,61 @@ function initYearCountdown() {
 
 	var startYear = 1821;
 	var initialDelay = 900;
-	var duration = 2200;
-	var startTime = null;
-	yearEl.textContent = startYear;
 
-	function updateYear(timestamp) {
-		if (!startTime) startTime = timestamp;
-		var progress = Math.min((timestamp - startTime) / duration, 1);
-		var easedProgress = 1 - Math.pow(1 - progress, 3);
-		var year = Math.floor(startYear + (currentYear - startYear) * easedProgress);
-		yearEl.textContent = year;
+	var startStr = String(startYear);
+	var targetStr = String(currentYear);
+	var numDigits = startStr.length;
 
-		if (progress < 1) {
-			requestAnimationFrame(updateYear);
-		} else {
-			yearEl.textContent = currentYear;
-		}
+	while (targetStr.length < numDigits) targetStr = '0' + targetStr;
+
+	var parent = yearEl.parentNode;
+
+	var digitSpans = [];
+	for (var i = 0; i < numDigits; i++) {
+		var span = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+		span.setAttribute('class', 'slot-digit');
+		span.textContent = startStr[i];
+		parent.insertBefore(span, yearEl);
+		digitSpans.push(span);
 	}
+	parent.removeChild(yearEl);
+
+	var totalSpinTime = 2000;
+	var stopDelay = 300;
+	var tickInterval = 50;
 
 	setTimeout(function() {
-		requestAnimationFrame(updateYear);
+		for (var i = numDigits - 1; i >= 0; i--) {
+			(function(idx) {
+				var targetDigit = parseInt(targetStr[idx]);
+				var elapsed = 0;
+				var startOffset = (numDigits - 1 - idx) * 60;
+				var maxTime = totalSpinTime - (numDigits - 1 - idx) * stopDelay;
+				if (maxTime < 120) maxTime = 120;
+
+				setTimeout(function() {
+					function tick() {
+						elapsed += tickInterval;
+						var randomDigit = Math.floor(Math.random() * 10);
+						digitSpans[idx].textContent = randomDigit;
+
+						var progress = elapsed / maxTime;
+						var blurAmount = Math.max(0, 0.8 * (1 - progress));
+						digitSpans[idx].setAttribute('style',
+							'filter: blur(' + blurAmount + 'px); opacity: ' + (0.55 + 0.45 * (1 - progress * progress)) + ';');
+
+						if (elapsed >= maxTime) {
+							digitSpans[idx].textContent = targetDigit;
+							digitSpans[idx].setAttribute('style',
+								'filter: blur(0); opacity: 1;');
+							return;
+						}
+						setTimeout(tick, tickInterval);
+					}
+					tick();
+				}, startOffset);
+			})(i);
+		}
 	}, initialDelay);
 }
 
