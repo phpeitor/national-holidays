@@ -1,0 +1,17 @@
+{
+  "name": "Fiestas Patrias Perú",
+  "short_name": "Fiestas Patrias",
+  "description": "Celebración de la Independencia del Perú. 1821 - 2026.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#101522",
+  "theme_color": "#D91023",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./resources/logo.png",
+      "sizes": "910x390",
+      "type": "image/png"
+    }
+  ]
+}

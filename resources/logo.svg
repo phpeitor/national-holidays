@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 910 390" width="910" height="390">
+  <rect width="910" height="390" rx="20" fill="#ffffff"/>
+  <rect x="6" y="6" width="898" height="378" rx="16" fill="none" stroke="rgba(227,186,232,0.7)" stroke-width="2" stroke-dasharray="10 6"/>
+  <g transform="translate(455,170)">
+    <rect x="-60" y="-80" width="120" height="160" rx="8" fill="#D91023"/>
+    <rect x="-6" y="-80" width="12" height="160" fill="#ffffff"/>
+    <text x="0" y="10" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="72" font-weight="bold" fill="#ffffff">FP</text>
+  </g>
+  <text x="455" y="280" text-anchor="middle" font-family="'Trajan Pro','Times New Roman',serif" font-size="28" font-weight="bold" fill="#1a1a2e" letter-spacing="4">FIESTAS PATRIAS</text>
+  <text x="455" y="315" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="18" fill="#666" letter-spacing="6">PERÚ</text>
+  <text x="455" y="350" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#999" letter-spacing="2">1821 · INDEPENDENCIA · 2026</text>
+</svg>

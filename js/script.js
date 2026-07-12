@@ -1,8 +1,8 @@
 function initFeature() {
-	var fusionApp = document.getElementById("fusion-app");
+	const fusionApp = document.getElementById("fusion-app");
 	if (!fusionApp) return Promise.resolve();
-	var templateVersion = "v1.13";
-	var templateParts = [
+	const templateVersion = "v1.13";
+	const templateParts = [
 		"shell-open",
 		"defs-and-sky",
 		"ground",
@@ -17,7 +17,7 @@ function initFeature() {
 	];
 
 	return Promise.all(templateParts.map(function(part) {
-		var url = "./templates/fusion-app/" + part + ".html?" + templateVersion;
+		const url = "./templates/fusion-app/" + part + ".html?" + templateVersion;
 		return fetch(url).then(function(response) {
 			if (!response.ok) throw new Error("No se pudo cargar " + url);
 			return response.text();
@@ -33,94 +33,94 @@ function initFeature() {
 }
 
 function initFeatureInteractions() {
-	function t(e, t, n) {
-		var a = screen.width / 2 - t / 2,
-			o = screen.height / 2 - n / 2;
-		window.open(e, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + t + ",height=" + n + ",top=" + o + ",left=" + a)
+	function shareWindow(e, t, n) {
+		const a = screen.width / 2 - t / 2;
+		const o = screen.height / 2 - n / 2;
+		window.open(e, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + t + ",height=" + n + ",top=" + o + ",left=" + a);
 	}
 
-	var w = function(e) {
-		"interactive" === document.readyState || "complete" === document.readyState ? e() : document.addEventListener("DOMContentLoaded", e)
+	const readyFn = function(e) {
+		"interactive" === document.readyState || "complete" === document.readyState ? e() : document.addEventListener("DOMContentLoaded", e);
 	};
 	
-	w(function() {
-		var e = document.querySelectorAll(".js-gi-share");
-		e && [].forEach.call(e, function(e) {
-			e.addEventListener("click", function(e) {
-				e.preventDefault(), t(this.href, 600, 620)
-			})
-		})
-	})
+	readyFn(function() {
+		const shareLinks = document.querySelectorAll(".js-gi-share");
+		shareLinks && [].forEach.call(shareLinks, function(el) {
+			el.addEventListener("click", function(e) {
+				e.preventDefault();
+				shareWindow(this.href, 600, 620);
+			});
+		});
+	});
 }
 
 function initYearCountdown() {
-	var currentYear = new Date().getFullYear();
-	var yearEl = document.getElementById('year-count');
+	const currentYear = new Date().getFullYear();
+	const yearEl = document.getElementById("year-count");
 	if (!yearEl) return;
 
-	var startYear = 1821;
-	var initialDelay = 900;
+	const startYear = 1821;
+	const initialDelay = 900;
 
-	var startStr = String(startYear);
-	var targetStr = String(currentYear);
-	var numDigits = startStr.length;
+	const startStr = String(startYear);
+	let targetStr = String(currentYear);
+	const numDigits = startStr.length;
 
-	while (targetStr.length < numDigits) targetStr = '0' + targetStr;
+	while (targetStr.length < numDigits) targetStr = "0" + targetStr;
 
-	var parent = yearEl.parentNode;
+	const parent = yearEl.parentNode;
 
-	var digitSpans = [];
-	for (var i = 0; i < numDigits; i++) {
-		var span = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
-		span.setAttribute('class', 'slot-digit');
+	const digitSpans = [];
+	for (let i = 0; i < numDigits; i++) {
+		const span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+		span.setAttribute("class", "slot-digit");
 		span.textContent = startStr[i];
 		parent.insertBefore(span, yearEl);
 		digitSpans.push(span);
 	}
 	parent.removeChild(yearEl);
 
-	var totalSpinTime = 2000;
-	var stopDelay = 300;
-	var tickInterval = 50;
+	const totalSpinTime = 2000;
+	const stopDelay = 300;
+	const tickInterval = 50;
 
 	setTimeout(function() {
-		for (var i = numDigits - 1; i >= 0; i--) {
-			(function(idx) {
-				var targetDigit = parseInt(targetStr[idx]);
-				var elapsed = 0;
-				var startOffset = (numDigits - 1 - idx) * 60;
-				var maxTime = totalSpinTime - (numDigits - 1 - idx) * stopDelay;
-				if (maxTime < 120) maxTime = 120;
+		for (let i = numDigits - 1; i >= 0; i--) {
+			const idx = i;
+			const targetDigit = parseInt(targetStr[idx]);
+			const startOffset = (numDigits - 1 - idx) * 60;
+			let maxTime = totalSpinTime - (numDigits - 1 - idx) * stopDelay;
+			if (maxTime < 120) maxTime = 120;
 
-				setTimeout(function() {
-					function tick() {
-						elapsed += tickInterval;
-						var randomDigit = Math.floor(Math.random() * 10);
-						digitSpans[idx].textContent = randomDigit;
+			setTimeout(function() {
+				let elapsed = 0;
+				function tick() {
+					elapsed += tickInterval;
+					const randomDigit = Math.floor(Math.random() * 10);
+					digitSpans[idx].textContent = randomDigit;
 
-						var progress = elapsed / maxTime;
-						var blurAmount = Math.max(0, 0.8 * (1 - progress));
-						digitSpans[idx].setAttribute('style',
-							'filter: blur(' + blurAmount + 'px); opacity: ' + (0.55 + 0.45 * (1 - progress * progress)) + ';');
+					const progress = elapsed / maxTime;
+					const blurAmount = Math.max(0, 0.8 * (1 - progress));
+					digitSpans[idx].setAttribute("style",
+						"filter: blur(" + blurAmount + "px); opacity: " + (0.55 + 0.45 * (1 - progress * progress)) + ";");
 
-						if (elapsed >= maxTime) {
-							digitSpans[idx].textContent = targetDigit;
-							digitSpans[idx].setAttribute('style',
-								'filter: blur(0); opacity: 1;');
-							return;
-						}
-						setTimeout(tick, tickInterval);
+					if (elapsed >= maxTime) {
+						digitSpans[idx].textContent = targetDigit;
+						digitSpans[idx].setAttribute("style",
+							"filter: blur(0); opacity: 1;");
+						return;
 					}
-					tick();
-				}, startOffset);
-			})(i);
+					setTimeout(tick, tickInterval);
+				}
+				tick();
+			}, startOffset);
 		}
 	}, initialDelay);
 }
 
 function openImageLightbox(imageSrc, imageAlt, triggerElement) {
-	if (document.querySelector('.logo-lightbox')) {
-	return;
+	if (document.querySelector(".logo-lightbox")) {
+		return;
 	}
 
 	const rect = triggerElement.getBoundingClientRect();
@@ -131,56 +131,56 @@ function openImageLightbox(imageSrc, imageAlt, triggerElement) {
 	const dx = elementCX - vpCX;
 	const dy = elementCY - vpCY;
 
-	const overlay = document.createElement('div');
-	overlay.className = 'logo-lightbox';
-	overlay.style.setProperty('--lbx', dx + 'px');
-	overlay.style.setProperty('--lby', dy + 'px');
+	const overlay = document.createElement("div");
+	overlay.className = "logo-lightbox";
+	overlay.style.setProperty("--lbx", dx + "px");
+	overlay.style.setProperty("--lby", dy + "px");
 
-	const img = document.createElement('img');
+	const img = document.createElement("img");
 	img.src = imageSrc;
-	img.className = 'logo-lightbox__img';
+	img.className = "logo-lightbox__img";
 	img.alt = imageAlt;
 
-	const closeBtn = document.createElement('button');
-	closeBtn.className = 'logo-lightbox__close';
-	closeBtn.setAttribute('aria-label', 'Cerrar');
-	closeBtn.innerHTML = '&times;';
+	const closeBtn = document.createElement("button");
+	closeBtn.className = "logo-lightbox__close";
+	closeBtn.setAttribute("aria-label", "Cerrar");
+	closeBtn.innerHTML = "&times;";
 
 	overlay.appendChild(img);
 	overlay.appendChild(closeBtn);
 	document.body.appendChild(overlay);
 
 	requestAnimationFrame(function () {
-	requestAnimationFrame(function () {
-		overlay.classList.add('logo-lightbox--open');
-	});
+		requestAnimationFrame(function () {
+			overlay.classList.add("logo-lightbox--open");
+		});
 	});
 
 	function onKey(e) {
-	if (e.key === 'Escape') {
-		closeLightbox();
-	}
+		if (e.key === "Escape") {
+			closeLightbox();
+		}
 	}
 
 	function closeLightbox() {
-	document.removeEventListener('keydown', onKey);
-	overlay.classList.remove('logo-lightbox--open');
-	overlay.classList.add('logo-lightbox--closing');
-	window.setTimeout(function () {
-		overlay.remove();
-	}, 420);
+		document.removeEventListener("keydown", onKey);
+		overlay.classList.remove("logo-lightbox--open");
+		overlay.classList.add("logo-lightbox--closing");
+		window.setTimeout(function () {
+			overlay.remove();
+		}, 420);
 	}
 
-	closeBtn.addEventListener('click', function (e) {
-	e.stopPropagation();
-	closeLightbox();
+	closeBtn.addEventListener("click", function (e) {
+		e.stopPropagation();
+		closeLightbox();
 	});
 
-	overlay.addEventListener('click', function (e) {
-	if (e.target === overlay) closeLightbox();
+	overlay.addEventListener("click", function (e) {
+		if (e.target === overlay) closeLightbox();
 	});
 
-	document.addEventListener('keydown', onKey);
+	document.addEventListener("keydown", onKey);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -189,20 +189,24 @@ document.addEventListener("DOMContentLoaded", function() {
 			initYearCountdown();
 		});
 
-	const logoEl = document.querySelector('.logo');
+	const logoEl = document.querySelector(".logo");
 	if (!logoEl) return;
-	const logoImg = logoEl.querySelector('.box img');
+	const logoImg = logoEl.querySelector(".box img");
 	if (!logoImg) return;
 
 	function openLogo() {
-		openImageLightbox(logoImg.src, 'Logo Fiestas Patrias Per\u00fa', logoEl);
+		openImageLightbox(logoImg.src, "Logo Fiestas Patrias Per\u00fa", logoEl);
 	}
 
-	logoEl.addEventListener('click', openLogo);
-	logoEl.addEventListener('keydown', function(e) {
-		if (e.key === 'Enter' || e.key === ' ') {
+	logoEl.addEventListener("click", openLogo);
+	logoEl.addEventListener("keydown", function(e) {
+		if (e.key === "Enter" || e.key === " ") {
 			e.preventDefault();
 			openLogo();
 		}
 	});
+
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker.register("./sw.js").catch(function() {});
+	}
 });

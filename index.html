@@ -10,12 +10,17 @@
 	<meta property="og:image" content="./resources/logo.png" />
 	<link href="./css/style.css?v1.13" rel="stylesheet" type="text/css" />
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='75'>🎌</text></svg>" />
+	<link rel="manifest" href="./manifest.json" />
+	<meta name="theme-color" content="#D91023" />
 	<title>Fiestas Patrias Perú</title>
 </head>
 <body>
 	<div class="logo" role="button" tabindex="0" aria-label="Abrir logo en pantalla completa">
 	  <div class="box">
-		<img src="./resources/logo.png" alt="Logo Fiestas Patrias Perú" />
+		<picture>
+		  <source srcset="./resources/logo.svg" type="image/svg+xml" />
+		  <img src="./resources/logo.png" alt="Logo Fiestas Patrias Perú" width="910" height="390" />
+		</picture>
 	  </div>
 	</div>
 
