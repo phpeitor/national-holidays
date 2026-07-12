@@ -654,13 +654,39 @@ body {
 #fusion-app {
   max-width: 100%;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 0; 
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   overflow-x: hidden;
+}
+
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fffbe6;
+  font-family: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  z-index: 1000;
+  pointer-events: none;
+  animation: loadingPulse 1.2s ease-in-out infinite alternate;
+}
+
+#fusion-app.loaded .loading-indicator {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+@keyframes loadingPulse {
+  from { opacity: 0.35; }
+  to { opacity: 0.9; }
 }
 
 .l-ghost,
@@ -674,7 +700,8 @@ body {
 #main-art {
   display: block;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   background: #101522;
 }
 
@@ -1032,6 +1059,39 @@ body {
   to { transform: rotate(2.2deg) translate(3px, 1px); }
 }
 
+#fg-crowd {
+  animation: crowdSway 2.8s ease-in-out infinite alternate;
+}
+
+#mg-back-characters,
+#mg-front-characters,
+#bg-crowd {
+  animation: crowdSwayBack 2.8s ease-in-out infinite alternate;
+}
+
+#horse-mountie {
+  transform-box: fill-box;
+  transform-origin: 60% 100%;
+  animation: horseRock 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes crowdSway {
+  from { transform: translateX(0); }
+  to { transform: translateX(-10px); }
+}
+
+@keyframes crowdSwayBack {
+  from { transform: translateX(0); }
+  to { transform: translateX(10px); }
+}
+
+@keyframes horseRock {
+  0% { transform: rotate(0deg); }
+  35% { transform: rotate(5deg); }
+  70% { transform: rotate(-2deg); }
+  100% { transform: rotate(6deg); }
+}
+
 .logo{
   position: absolute;
   top: 7%;
@@ -1132,18 +1192,122 @@ body {
     background: rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 800px) {
-  #fusion-app {
-    padding-top: 0;
+@media (prefers-reduced-motion: reduce) {
+  .sky-star, .star-glow, .firework, .firework-alt, .sparkle,
+  .cannon-smoke, .haze, .haze-wisp,
+  #held-flag path, #horse-tail, #horse-mane,
+  #mouth-smoke, .mouth-smoke-line, .mouth-smoke-puff {
+    animation: none !important;
+  }
+  
+  #fg-crowd, #mg-back-characters, #mg-front-characters, #bg-crowd, #horse-mountie {
+    animation: none !important;
+  }
+}
+
+/* small phones */
+@media (max-width: 480px) {
+  .logo {
+    width: 60px;
+    top: 8px;
+    left: 8px;
   }
 
+  .box {
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .logo:before {
+    top: -4px;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+  }
+
+  #patriotic-title {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #fusion-app {
+    min-height: 100dvh;
+  }
+
+  #main-art {
+    min-height: 100dvh;
+    max-height: 100dvh;
+  }
+
+  .logo-lightbox__img {
+    width: min(90vw, 360px);
+  }
+
+  .logo-lightbox__close {
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 26px;
+  }
+}
+
+/* phones landscape + small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
   .logo {
-    width: 80px;
+    width: 70px;
     top: 10px;
     left: 10px;
   }
 
+  .box {
+    padding: 5px;
+  }
+
   #patriotic-title {
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  #main-art {
+    min-height: 100dvh;
+    max-height: 100dvh;
+  }
+}
+
+/* tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    width: 100px;
+    top: 5%;
+    left: 3%;
+  }
+
+  #patriotic-title {
+    font-size: 15px;
+  }
+}
+
+/* large screens */
+@media (min-width: 1400px) {
+  .logo {
+    width: 160px;
+  }
+
+  #patriotic-title {
+    font-size: 20px;
+    letter-spacing: 2.4px;
+  }
+}
+
+/* very large screens */
+@media (min-width: 1800px) {
+  .logo {
+    width: 190px;
+  }
+
+  #patriotic-title {
+    font-size: 24px;
+    letter-spacing: 3px;
   }
 }

@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charSet="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-	<link href="./css/style.css?v1.12" rel="stylesheet" type="text/css" />
+	<meta charSet="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+	<meta name="description" content="Fiestas Patrias Perú — Celebración de la Independencia. 1821 - 2026." />
+	<meta property="og:title" content="Fiestas Patrias Perú" />
+	<meta property="og:description" content="Celebración de la Independencia del Perú. 1821 - 2026." />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="./resources/logo.png" />
+	<link href="./css/style.css?v1.13" rel="stylesheet" type="text/css" />
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='75'>🎌</text></svg>" />
-    <title>Fiestas Patrias Perú</title>
+	<title>Fiestas Patrias Perú</title>
 </head>
 <body>
-	<div class="logo">
+	<div class="logo" role="button" tabindex="0" aria-label="Abrir logo en pantalla completa">
 	  <div class="box">
-		<img src="./resources/logo.png" />
+		<img src="./resources/logo.png" alt="Logo Fiestas Patrias Perú" />
 	  </div>
 	</div>
 
-	<div id="fusion-app">
+	<div id="fusion-app" aria-label="Escena interactiva de Fiestas Patrias" role="img">
+		<div class="loading-indicator" aria-live="polite">Cargando...</div>
 	</div>
-<script src="./js/TweenMax.min.js"></script>
-<script src="./js/script.js?v1.12"></script>
+<script src="./js/script.js?v1.13"></script>
 </body>
 </html>
