@@ -2,7 +2,7 @@ function initFeature() {
 						
 	const fusionApp = document.getElementById("fusion-app");
 	if (!fusionApp) return Promise.resolve();
-	var templateVersion = "v1.11";
+	var templateVersion = "v1.12";
 	var templateParts = [
 		"shell-open",
 		"defs-and-sky",
