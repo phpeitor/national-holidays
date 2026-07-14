@@ -37,39 +37,26 @@ function initFeature() {
 function loadCondorSvg(container) {
 	const target = container.querySelector("#condor-content");
 	if (!target) return Promise.resolve();
-	return fetch("./resources/condor.svg").then(function(response) {
+	return fetch("./resources/condor.svg?v=" + Date.now()).then(function(response) {
 		if (!response.ok) throw new Error("No se pudo cargar condor.svg");
 		return response.text();
 	}).then(function(svgText) {
-		var parser = new DOMParser();
-		var doc = parser.parseFromString(svgText, "image/svg+xml");
-		var svgRoot = doc.documentElement;
-		var children = svgRoot.childNodes;
-		var defs = doc.createElementNS("http://www.w3.org/2000/svg", "defs");
-		var imported = [];
+		var temp = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+		temp.innerHTML = svgText;
+		var children = temp.childNodes;
+		var mainDefs = container.querySelector("#main-art defs");
 		for (var i = 0; i < children.length; i++) {
 			var node = children[i];
 			if (node.nodeType === 1) {
 				var tag = node.tagName.toLowerCase();
 				if (tag === "defs" || tag === "style") {
-					defs.appendChild(document.importNode(node, true));
-				} else if (tag === "g" || tag === "path" || tag === "circle" || tag === "ellipse" || tag === "rect" || tag === "line" || tag === "polyline" || tag === "polygon") {
-					imported.push(document.importNode(node, true));
+					if (mainDefs) mainDefs.appendChild(document.importNode(node, true));
+				} else {
+					target.appendChild(document.importNode(node, true));
 				}
 			}
 		}
-		if (defs.childNodes.length > 0) {
-			var svg = container.querySelector("#main-art svg") || container.querySelector("#main-art");
-			var firstDefs = container.querySelector("#main-art defs");
-			if (firstDefs) {
-				for (var j = 0; j < defs.childNodes.length; j++) {
-					firstDefs.appendChild(defs.childNodes[j]);
-				}
-			}
-		}
-		for (var k = 0; k < imported.length; k++) {
-			target.appendChild(imported[k]);
-		}
+		console.log("Cóndor cargado:", target.childNodes.length, "elementos");
 	}).catch(function(error) {
 		console.error("Error cargando condor.svg:", error);
 	});
