@@ -1224,9 +1224,13 @@ body {
   transition: opacity 0.6s;
 }
 
+#musical-notes .notes-hitarea {
+  cursor: pointer;
+}
+
 #musical-notes .note-body {
   transform-origin: center;
-  animation: noteFloat 3.5s ease-in-out infinite;
+  animation: noteFloat 6s ease-in-out infinite;
 }
 
 #musical-notes .note--one .note-body {
@@ -1234,15 +1238,15 @@ body {
 }
 
 #musical-notes .note--two .note-body {
-  animation-delay: 1s;
-}
-
-#musical-notes .note--three .note-body {
   animation-delay: 2s;
 }
 
+#musical-notes .note--three .note-body {
+  animation-delay: 4s;
+}
+
 #musical-notes.is-playing .note-body {
-  animation: noteMelody 4s ease-in-out infinite;
+  animation: noteMelody 8s ease-in-out infinite;
 }
 
 #musical-notes.is-playing .note--one .note-body {
@@ -1250,11 +1254,11 @@ body {
 }
 
 #musical-notes.is-playing .note--two .note-body {
-  animation-delay: 0.6s;
+  animation-delay: 1s;
 }
 
 #musical-notes.is-playing .note--three .note-body {
-  animation-delay: 1.2s;
+  animation-delay: 2s;
 }
 
 #musical-notes ellipse,
@@ -1274,6 +1278,8 @@ body {
 #musical-notes path {
   fill: #ffd700;
 }
+
+
 @keyframes condorSoar {
   0% { transform: translate(0, 0) rotate(-1deg); }
   30% { transform: translate(15px, -8px) rotate(0.5deg); }
@@ -1380,17 +1386,16 @@ body {
 
 @keyframes noteFloat {
   0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-5px) rotate(3deg); }
+  50% { transform: translateY(-2px) rotate(2deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
 
 @keyframes noteMelody {
   0% { transform: translateY(0) translateX(0) rotate(0deg) scale(1); opacity: 1; }
-  20% { transform: translateY(-10px) translateX(6px) rotate(6deg) scale(1.12); opacity: 0.95; }
-  40% { transform: translateY(-20px) translateX(-4px) rotate(-4deg) scale(1.08); opacity: 0.85; }
-  60% { transform: translateY(-30px) translateX(8px) rotate(5deg) scale(1.15); opacity: 0.75; }
-  80% { transform: translateY(-40px) translateX(-2px) rotate(-2deg) scale(1.05); opacity: 0.65; }
-  100% { transform: translateY(-50px) translateX(0) rotate(0deg) scale(1); opacity: 0.5; }
+  25% { transform: translateY(-8px) translateX(5px) rotate(4deg) scale(1.08); opacity: 0.9; }
+  50% { transform: translateY(-16px) translateX(-3px) rotate(-3deg) scale(1.04); opacity: 0.8; }
+  75% { transform: translateY(-24px) translateX(4px) rotate(3deg) scale(1.08); opacity: 0.7; }
+  100% { transform: translateY(-32px) translateX(0) rotate(0deg) scale(1); opacity: 0.6; }
 }
 
 /* large screens */
