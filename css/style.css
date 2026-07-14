@@ -1219,9 +1219,27 @@ body {
   100% { stroke-opacity: 0.6; stroke-width: 2.5; filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.2)); }
 }
 
+#musical-notes {
+  cursor: pointer;
+}
+
 #musical-notes .note {
   transform-origin: center;
   animation: noteFloat 5s ease-in-out infinite;
+  transition: transform 0.2s;
+}
+
+#musical-notes .note:hover {
+  filter: brightness(1.5);
+}
+
+#musical-notes.is-playing .note {
+  animation-duration: 0.8s;
+}
+
+#musical-notes.is-stopped .note {
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
 }
 
 #musical-notes .note--one {

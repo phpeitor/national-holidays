@@ -81,7 +81,35 @@ function initFeatureInteractions() {
 				shareWindow(this.href, 600, 620);
 			});
 		});
+
+		initAudioToggle();
 	});
+}
+
+function initAudioToggle() {
+	var notes = document.getElementById("musical-notes");
+	if (!notes) return;
+
+	var audio = new Audio("./resources/himno.mp3");
+	audio.loop = true;
+
+	var isPlaying = false;
+
+	function toggleAudio() {
+		if (isPlaying) {
+			audio.pause();
+			notes.classList.remove("is-playing");
+			notes.classList.add("is-stopped");
+			isPlaying = false;
+		} else {
+			audio.play().catch(function() {});
+			notes.classList.remove("is-stopped");
+			notes.classList.add("is-playing");
+			isPlaying = true;
+		}
+	}
+
+	notes.addEventListener("click", toggleAudio);
 }
 
 function initYearCountdown() {
