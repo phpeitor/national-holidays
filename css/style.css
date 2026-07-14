@@ -1221,14 +1221,12 @@ body {
 
 #musical-notes {
   cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0.2;
   transition: opacity 0.4s;
 }
 
 #musical-notes.is-playing {
   opacity: 1;
-  pointer-events: auto;
 }
 
 #musical-notes .note {
