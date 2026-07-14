@@ -1,11 +1,11 @@
 var CACHE_NAME = "fiestas-patrias-v5";
 var urlsToCache = [
-  "./",
-  "./index.html",
-  "./css/style.css?v1.56",
-  "./js/script.js?v1.56",
-  "./resources/logo.png?v1.56",
-  "./manifest.json"
+  "../",
+  "../index.html",
+  "../css/style.css?v1.56",
+  "./script.js?v1.56",
+  "../resources/logo.png?v1.56",
+  "../manifest.json"
 ];
 
 self.addEventListener("install", function(event) {

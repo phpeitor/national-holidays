@@ -1201,25 +1201,9 @@ body {
 }
 
 #andean-condor {
-  transform-origin: center;
-  opacity: 0.82;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
   animation: condorSoar 8s ease-in-out infinite alternate;
-}
-
-.condor-body {
-  fill: #151525;
-}
-
-.condor-feathers {
-  stroke: #0d0d1a;
-  stroke-width: 1.2;
-  stroke-linecap: round;
-}
-
-.condor-collar {
-  fill: #d4cfc5;
-  opacity: 0.55;
 }
 
 #musical-notes .note {

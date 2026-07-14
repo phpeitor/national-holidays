@@ -207,6 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	if ("serviceWorker" in navigator) {
-		navigator.serviceWorker.register("./sw.js").catch(function() {});
+		var basePath = location.pathname.replace(/\/[^\/]*$/, "/");
+		navigator.serviceWorker.register("./js/sw.js", { scope: basePath }).catch(function() {});
 	}
 });
