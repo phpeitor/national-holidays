@@ -26,6 +26,12 @@
 						<g id="animated-sky">
 							<rect class="sky-fill" x="-40" y="-9" width="1280" height="770"></rect>
 
+							<!-- cinta rojiblanca decorativa -->
+							<g id="cinta-rojiblanca">
+								<path class="ribbon-red" d="M-40,4 Q80,18 200,8 Q320,-2 440,12 Q560,28 680,10 Q800,-8 920,8 Q1040,24 1160,10 Q1240,2 1280,-4 L1280,22 Q1240,16 1160,26 Q1040,40 920,24 Q800,8 680,26 Q560,42 440,28 Q320,14 200,22 Q80,32 -40,18 Z"></path>
+								<path class="ribbon-white" d="M-40,18 Q80,32 200,22 Q320,14 440,28 Q560,42 680,26 Q800,8 920,24 Q1040,40 1160,26 Q1240,16 1280,22 L1280,40 Q1240,34 1160,42 Q1040,56 920,40 Q800,24 680,42 Q560,56 440,42 Q320,28 200,36 Q80,48 -40,34 Z"></path>
+							</g>
+
 							<!-- big decorative stars in top-left area -->
 							<circle class="sky-star sky-star--one" cx="58" cy="36" r="2.6"></circle>
 							<circle class="sky-star sky-star--two" cx="142" cy="22" r="2.2"></circle>
@@ -129,6 +135,33 @@
 								<circle class="sparkle-dot" cx="0" cy="0" r="1.8"></circle>
 								<circle class="sparkle-dot" cx="7" cy="-3" r="1.2"></circle>
 								<circle class="sparkle-dot" cx="-4" cy="5" r="0.9"></circle>
+							</g>
+
+							<!-- cóndor andino volando -->
+							<g id="andean-condor" transform="translate(380, 95)" class="condor">
+								<path class="condor-body" d="M-8,0 C-18,-16 -38,-26 -56,-20 C-52,-30 -38,-34 -26,-28 C-16,-22 -10,-14 -4,-8 C0,-4 4,-2 10,0 C14,1 16,2 17,4 C18,6 16,7 14,6 C12,5 10,4 8,5 C6,6 4,7 2,7 C0,7 -2,5 -4,3 C-6,1 -7,0 -8,0 Z"></path>
+								<path class="condor-feathers" d="M-50,-22 L-48,-28 M-42,-26 L-40,-32 M-32,-27 L-30,-33"></path>
+								<ellipse class="condor-collar" cx="7" cy="-1" rx="3" ry="2"></ellipse>
+							</g>
+
+							<!-- notas musicales flotando -->
+							<g id="musical-notes">
+								<g class="note note--one" transform="translate(720, 70)">
+									<ellipse cx="0" cy="14" rx="4" ry="3" transform="rotate(-20)"></ellipse>
+									<line x1="4" y1="14" x2="4" y2="0"></line>
+									<path d="M4,0 C6,0 10,2 12,5 C10,3 7,2 4,2 Z"></path>
+								</g>
+								<g class="note note--two" transform="translate(870, 42)">
+									<ellipse cx="0" cy="14" rx="4" ry="3" transform="rotate(-20)"></ellipse>
+									<line x1="4" y1="14" x2="4" y2="0"></line>
+									<ellipse cx="18" cy="12" rx="4" ry="3" transform="rotate(-20 18 12)"></ellipse>
+									<line x1="22" y1="12" x2="22" y2="-2"></line>
+									<path d="M4,0 L22,-2"></path>
+								</g>
+								<g class="note note--three" transform="translate(940, 90)">
+									<ellipse cx="0" cy="14" rx="4" ry="3" transform="rotate(-20)"></ellipse>
+									<line x1="4" y1="14" x2="4" y2="0"></line>
+								</g>
 							</g>
 
 							<!-- cannon smoke (kept from original) -->

@@ -1192,11 +1192,92 @@ body {
     background: rgba(255, 255, 255, 0.3);
 }
 
+.ribbon-red {
+  fill: #cc0000;
+}
+
+.ribbon-white {
+  fill: #ffffff;
+}
+
+#andean-condor {
+  transform-origin: center;
+  opacity: 0.82;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+  animation: condorSoar 8s ease-in-out infinite alternate;
+}
+
+.condor-body {
+  fill: #151525;
+}
+
+.condor-feathers {
+  stroke: #0d0d1a;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.condor-collar {
+  fill: #d4cfc5;
+  opacity: 0.55;
+}
+
+#musical-notes .note {
+  transform-origin: center;
+  animation: noteFloat 5s ease-in-out infinite;
+}
+
+#musical-notes .note--one {
+  animation-delay: 0s;
+}
+
+#musical-notes .note--two {
+  animation-delay: 1.7s;
+}
+
+#musical-notes .note--three {
+  animation-delay: 3.4s;
+}
+
+#musical-notes ellipse,
+#musical-notes line,
+#musical-notes path {
+  fill: none;
+  stroke: #ffd700;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#musical-notes ellipse {
+  fill: #ffd700;
+}
+
+#musical-notes path {
+  fill: #ffd700;
+}
+
+@keyframes condorSoar {
+  0% { transform: translate(0, 0) rotate(-1deg); }
+  30% { transform: translate(15px, -8px) rotate(0.5deg); }
+  60% { transform: translate(-10px, -4px) rotate(-0.5deg); }
+  100% { transform: translate(8px, -12px) rotate(1deg); }
+}
+
+@keyframes noteFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.85; }
+  50% { transform: translateY(-18px) rotate(12deg); opacity: 0.7; }
+  90% { opacity: 0.85; }
+  100% { transform: translateY(-28px) rotate(18deg); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .sky-star, .star-glow, .firework, .firework-alt, .sparkle,
   .cannon-smoke, .haze, .haze-wisp,
   #held-flag path, #horse-tail, #horse-mane,
-  #mouth-smoke, .mouth-smoke-line, .mouth-smoke-puff {
+  #mouth-smoke, .mouth-smoke-line, .mouth-smoke-puff,
+  #andean-condor, #musical-notes .note {
     animation: none !important;
   }
   
