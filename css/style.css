@@ -1204,6 +1204,9 @@ body {
   opacity: 0.85;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
   animation: condorSoar 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 #musical-notes .note {

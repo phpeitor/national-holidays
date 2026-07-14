@@ -2,9 +2,9 @@ var CACHE_NAME = "fiestas-patrias-v5";
 var urlsToCache = [
   "../",
   "../index.html",
-  "../css/style.css?v1.56",
-  "./script.js?v1.56",
-  "../resources/logo.png?v1.56",
+  "../css/style.css?v1.58",
+  "./script.js?v1.58",
+  "../resources/logo.png?v1.58",
   "../manifest.json"
 ];
 
