@@ -1202,9 +1202,21 @@ body {
 }
 
 #andean-condor {
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
   animation: condorSoar 8s ease-in-out infinite alternate;
   pointer-events: none;
+}
+
+#condor-halo {
+  stroke: rgba(212, 175, 55, 0.3);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.15));
+  animation: haloPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes haloPulse {
+  0% { stroke-opacity: 0.2; stroke-width: 1.5; filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.2)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.08)); }
+  100% { stroke-opacity: 0.6; stroke-width: 2.5; filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.2)); }
 }
 
 #musical-notes .note {
@@ -1262,7 +1274,7 @@ body {
   .cannon-smoke, .haze, .haze-wisp,
   #held-flag path, #horse-tail, #horse-mane,
   #mouth-smoke, .mouth-smoke-line, .mouth-smoke-puff,
-  #andean-condor, #musical-notes .note {
+  #andean-condor, #condor-halo, #musical-notes .note {
     animation: none !important;
   }
   
