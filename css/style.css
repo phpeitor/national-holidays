@@ -1221,24 +1221,19 @@ body {
 
 #musical-notes {
   cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+#musical-notes.is-playing {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #musical-notes .note {
   transform-origin: center;
-  animation: noteFloat 5s ease-in-out infinite;
-  transition: filter 0.2s;
-}
-
-#musical-notes .note:hover {
-  filter: brightness(1.5);
-}
-
-#musical-notes.is-playing .note {
   animation: noteBubble 0.6s ease-in-out infinite;
-}
-
-#musical-notes.is-stopped .note {
-  animation: noteDrift 12s ease-in-out infinite;
 }
 
 #musical-notes .note--one {
@@ -1246,11 +1241,11 @@ body {
 }
 
 #musical-notes .note--two {
-  animation-delay: 1.7s;
+  animation-delay: 0.2s;
 }
 
 #musical-notes .note--three {
-  animation-delay: 3.4s;
+  animation-delay: 0.4s;
 }
 
 #musical-notes ellipse,
@@ -1270,34 +1265,11 @@ body {
 #musical-notes path {
   fill: #ffd700;
 }
-
 @keyframes condorSoar {
   0% { transform: translate(0, 0) rotate(-1deg); }
   30% { transform: translate(15px, -8px) rotate(0.5deg); }
   60% { transform: translate(-10px, -4px) rotate(-0.5deg); }
   100% { transform: translate(8px, -12px) rotate(1deg); }
-}
-
-@keyframes noteFloat {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.85; }
-  50% { transform: translateY(-18px) rotate(12deg); opacity: 0.7; }
-  90% { opacity: 0.85; }
-  100% { transform: translateY(-28px) rotate(18deg); opacity: 0; }
-}
-
-@keyframes noteBubble {
-  0% { transform: translateY(0) scale(1) rotate(-5deg); opacity: 1; }
-  25% { transform: translateY(-6px) scale(1.15) rotate(3deg); opacity: 1; }
-  50% { transform: translateY(-2px) scale(1.05) rotate(-2deg); opacity: 1; }
-  75% { transform: translateY(-8px) scale(1.1) rotate(4deg); opacity: 1; }
-  100% { transform: translateY(0) scale(1) rotate(-5deg); opacity: 1; }
-}
-
-@keyframes noteDrift {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
-  50% { transform: translateY(-10px) rotate(6deg); opacity: 0.8; }
-  100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1395,6 +1367,14 @@ body {
   #patriotic-title {
     font-size: 15px;
   }
+}
+
+@keyframes noteBubble {
+  0% { transform: translateY(0) scale(1) rotate(-5deg); opacity: 1; }
+  25% { transform: translateY(-6px) scale(1.15) rotate(3deg); opacity: 1; }
+  50% { transform: translateY(-2px) scale(1.05) rotate(-2deg); opacity: 1; }
+  75% { transform: translateY(-8px) scale(1.1) rotate(4deg); opacity: 1; }
+  100% { transform: translateY(0) scale(1) rotate(-5deg); opacity: 1; }
 }
 
 /* large screens */

@@ -99,11 +99,9 @@ function initAudioToggle() {
 		if (isPlaying) {
 			audio.pause();
 			notes.classList.remove("is-playing");
-			notes.classList.add("is-stopped");
 			isPlaying = false;
 		} else {
 			audio.play().catch(function() {});
-			notes.classList.remove("is-stopped");
 			notes.classList.add("is-playing");
 			isPlaying = true;
 		}
