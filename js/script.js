@@ -115,11 +115,24 @@ function initAudioToggle() {
 		syncControls(playing);
 	}
 
+	function handleAudioPlay() {
+		setPlaying(true);
+	}
+
+	function handleAudioStop() {
+		setPlaying(false);
+	}
+
+	audio.addEventListener("play", handleAudioPlay);
+	audio.addEventListener("pause", handleAudioStop);
+	audio.addEventListener("ended", handleAudioStop);
+
 	function toggleAudio() {
 		if (isPlaying) {
 			audio.pause();
 			setPlaying(false);
 		} else {
+			setPlaying(true);
 			audio.play().then(function() {
 				setPlaying(true);
 			}).catch(function() {

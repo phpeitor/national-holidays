@@ -1222,7 +1222,14 @@ body {
 }
 
 #musical-notes {
-  cursor: pointer;
+  position: fixed;
+  right: 84px;
+  bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  z-index: 1199;
+  cursor: default;
   transition: opacity 0.6s;
   opacity: 0;
   pointer-events: none;
@@ -1233,59 +1240,45 @@ body {
   pointer-events: auto;
 }
 
-#musical-notes .notes-hitarea {
-  cursor: pointer;
+#musical-notes .note {
+  display: inline-block;
+  color: #ffd966;
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(255, 217, 102, 0.45), 0 1px 3px rgba(0, 0, 0, 0.5);
+  transform-origin: center bottom;
+  opacity: 0;
 }
 
-#musical-notes .note-body {
-  transform-origin: center;
-  animation: noteFloat 6s ease-in-out infinite;
+#musical-notes.is-playing .note {
+  opacity: 1;
 }
 
-#musical-notes .note--one .note-body {
-  animation-delay: 0s;
+#musical-notes .note--one {
+  animation: noteFloat 1.8s ease-in-out infinite;
 }
 
-#musical-notes .note--two .note-body {
-  animation-delay: 2s;
+#musical-notes .note--two {
+  margin-bottom: 8px;
+  animation: noteFloat 2.1s ease-in-out infinite 0.25s;
 }
 
-#musical-notes .note--three .note-body {
-  animation-delay: 4s;
+#musical-notes .note--three {
+  margin-bottom: 16px;
+  animation: noteFloat 2.4s ease-in-out infinite 0.5s;
 }
 
-#musical-notes.is-playing .note-body {
-  animation: noteMelody 8s ease-in-out infinite;
+#musical-notes.is-playing .note--one {
+  animation: noteMelody 1.8s ease-in-out infinite;
 }
 
-#musical-notes.is-playing .note--one .note-body {
-  animation-delay: 0s;
+#musical-notes.is-playing .note--two {
+  animation: noteMelody 2.1s ease-in-out infinite 0.25s;
 }
 
-#musical-notes.is-playing .note--two .note-body {
-  animation-delay: 1s;
-}
-
-#musical-notes.is-playing .note--three .note-body {
-  animation-delay: 2s;
-}
-
-#musical-notes ellipse,
-#musical-notes line,
-#musical-notes path {
-  fill: none;
-  stroke: #ffd700;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-#musical-notes ellipse {
-  fill: #ffd700;
-}
-
-#musical-notes path {
-  fill: #ffd700;
+#musical-notes.is-playing .note--three {
+  animation: noteMelody 2.4s ease-in-out infinite 0.5s;
 }
 
 #national-hymn-toggle {
@@ -1358,6 +1351,16 @@ body {
 }
 
 @media (max-width: 480px) {
+  #musical-notes {
+    right: 70px;
+    bottom: 14px;
+    gap: 4px;
+  }
+
+  #musical-notes .note {
+    font-size: 22px;
+  }
+
   #national-hymn-toggle {
     right: 10px;
     bottom: 10px;
