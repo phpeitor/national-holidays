@@ -1282,18 +1282,25 @@ body {
 }
 
 #national-hymn-toggle {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 110px;
+  height: 110px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  z-index: 1200;
   cursor: pointer;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
-  transform-box: fill-box;
-  transform-origin: center;
   animation: hymnIdle 4.8s ease-in-out infinite;
 }
 
-#national-hymn-toggle .hymn-hitarea {
-  cursor: pointer;
-}
-
-#national-hymn-toggle image {
+#national-hymn-toggle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
 }
 
@@ -1340,6 +1347,15 @@ body {
   
   #fg-crowd, #mg-back-characters, #mg-front-characters, #bg-crowd, #horse-mountie {
     animation: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #national-hymn-toggle {
+    right: 10px;
+    bottom: 10px;
+    width: 88px;
+    height: 88px;
   }
 }
 

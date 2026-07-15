@@ -101,8 +101,7 @@ function initAudioToggle() {
 
 	function setImageSource(source) {
 		if (!hymnImage) return;
-		hymnImage.setAttribute("href", source);
-		hymnImage.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", source);
+		hymnImage.setAttribute("src", source);
 	}
 
 	function syncControls(playing) {
