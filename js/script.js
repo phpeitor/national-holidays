@@ -1,7 +1,7 @@
 function initFeature() {
 	const fusionApp = document.getElementById("fusion-app");
 	if (!fusionApp) return Promise.resolve();
-	const templateVersion = "v1.24";
+	const templateVersion = "v1.25";
 	const templateParts = [
 		"shell-open",
 		"defs-and-sky",
@@ -88,26 +88,51 @@ function initFeatureInteractions() {
 
 function initAudioToggle() {
 	var notes = document.getElementById("musical-notes");
-	if (!notes) return;
+	var hymnToggle = document.getElementById("national-hymn-toggle");
+	var hymnImage = document.getElementById("himno-toggle-image");
+	if (!notes && !hymnToggle) return;
 
 	var audio = new Audio("./resources/himno.mp3");
 	audio.loop = true;
 
 	var isPlaying = false;
+	var activeImage = "./resources/himno_01.png";
+	var idleImage = "./resources/himno_00.png";
+
+	function setImageSource(source) {
+		if (!hymnImage) return;
+		hymnImage.setAttribute("href", source);
+		hymnImage.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", source);
+	}
+
+	function syncControls(playing) {
+		if (notes) notes.classList.toggle("is-playing", playing);
+		if (hymnToggle) hymnToggle.classList.toggle("is-playing", playing);
+		setImageSource(playing ? activeImage : idleImage);
+	}
+
+	function setPlaying(playing) {
+		isPlaying = playing;
+		syncControls(playing);
+	}
 
 	function toggleAudio() {
 		if (isPlaying) {
 			audio.pause();
-			notes.classList.remove("is-playing");
-			isPlaying = false;
+			setPlaying(false);
 		} else {
-			audio.play().catch(function() {});
-			notes.classList.add("is-playing");
-			isPlaying = true;
+			audio.play().then(function() {
+				setPlaying(true);
+			}).catch(function() {
+				setPlaying(false);
+			});
 		}
 	}
 
-	notes.addEventListener("click", toggleAudio);
+	syncControls(false);
+
+	if (notes) notes.addEventListener("click", toggleAudio);
+	if (hymnToggle) hymnToggle.addEventListener("click", toggleAudio);
 }
 
 function initYearCountdown() {
