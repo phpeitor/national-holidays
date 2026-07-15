@@ -1223,8 +1223,8 @@ body {
 
 #musical-notes {
   position: fixed;
-  right: 84px;
-  bottom: 20px;
+  right: 76px;
+  bottom: 100px;
   display: flex;
   align-items: flex-end;
   gap: 6px;
@@ -1244,7 +1244,7 @@ body {
   display: inline-block;
   color: #ffd966;
   font-family: 'Cinzel', 'Georgia', serif;
-  font-size: 30px;
+  font-size: 26px;
   line-height: 1;
   text-shadow: 0 0 8px rgba(255, 217, 102, 0.45), 0 1px 3px rgba(0, 0, 0, 0.5);
   transform-origin: center bottom;
@@ -1285,8 +1285,8 @@ body {
   position: fixed;
   right: 18px;
   bottom: 18px;
-  width: 72px;
-  height: 72px;
+  width: 56px;
+  height: 56px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1352,41 +1352,41 @@ body {
 
 @media (max-width: 480px) {
   #musical-notes {
-    right: 70px;
-    bottom: 14px;
+    right: 54px;
+    bottom: 78px;
     gap: 4px;
   }
 
   #musical-notes .note {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   #national-hymn-toggle {
     right: 10px;
     bottom: 10px;
-    width: 58px;
-    height: 58px;
+    width: 46px;
+    height: 46px;
   }
 }
 
 /* small phones */
 @media (max-width: 480px) {
   .logo {
-    width: 65px;
-    top: 8px;
-    left: 8px;
+    width: 52px;
+    top: 6px;
+    left: 6px;
   }
 
   .box {
-    padding: 3px 4px;
+    padding: 2px 3px;
     border-radius: 3px;
   }
 
   .logo:before {
-    top: -3px;
-    bottom: -3px;
-    left: -3px;
-    right: -3px;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
   }
 
   #patriotic-title {
