@@ -25,41 +25,12 @@ function initFeature() {
 	})).then(function(parts) {
 			fusionApp.innerHTML = parts.join("\n");
 			fusionApp.classList.add("loaded");
-			return loadCondorSvg(fusionApp);
 		}).then(function() {
 			initFeatureInteractions();
 		}).catch(function(error) {
 			fusionApp.innerHTML = '<div style="color:#fff;text-align:center;padding:40px;font-family:sans-serif">Error al cargar la escena. <button onclick="location.reload()">Reintentar</button></div>';
 			console.error(error);
 		});
-}
-
-function loadCondorSvg(container) {
-	const target = container.querySelector("#condor-content");
-	if (!target) return Promise.resolve();
-	return fetch("./resources/condor.svg?v=" + Date.now()).then(function(response) {
-		if (!response.ok) throw new Error("No se pudo cargar condor.svg");
-		return response.text();
-	}).then(function(svgText) {
-		var temp = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-		temp.innerHTML = svgText;
-		var children = temp.childNodes;
-		var mainDefs = container.querySelector("#main-art defs");
-		for (var i = 0; i < children.length; i++) {
-			var node = children[i];
-			if (node.nodeType === 1) {
-				var tag = node.tagName.toLowerCase();
-				if (tag === "defs" || tag === "style") {
-					if (mainDefs) mainDefs.appendChild(document.importNode(node, true));
-				} else {
-					target.appendChild(document.importNode(node, true));
-				}
-			}
-		}
-		console.log("Cóndor cargado:", target.childNodes.length, "elementos");
-	}).catch(function(error) {
-		console.error("Error cargando condor.svg:", error);
-	});
 }
 
 function initFeatureInteractions() {

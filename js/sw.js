@@ -5,7 +5,6 @@ var urlsToCache = [
   "../css/style.css?v1.71",
   "./script.js?v1.71",
   "../resources/logo.png?v1.71",
-  "../resources/condor.svg",
   "../manifest.json"
 ];
 

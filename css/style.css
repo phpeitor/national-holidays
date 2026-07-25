@@ -1201,26 +1201,6 @@ body {
   fill: #ffffff;
 }
 
-#andean-condor {
-  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: condorSoar 7s ease-in-out infinite alternate, condorDrift 2.4s ease-in-out infinite;
-  pointer-events: none;
-}
-
-#condor-halo {
-  stroke: rgba(212, 175, 55, 0.3);
-  stroke-width: 2;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.15));
-  animation: haloPulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes haloPulse {
-  0% { stroke-opacity: 0.2; stroke-width: 1.5; filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.2)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.08)); }
-  100% { stroke-opacity: 0.6; stroke-width: 2.5; filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.2)); }
-}
-
 #musical-notes {
   position: fixed;
   right: 76px;
@@ -1310,19 +1290,6 @@ body {
 }
 
 
-@keyframes condorSoar {
-  0% { transform: translate(0, 0) rotate(-2deg) scale(1); }
-  25% { transform: translate(14px, -10px) rotate(0.5deg) scale(1.02); }
-  55% { transform: translate(-12px, -6px) rotate(-1deg) scale(0.99); }
-  100% { transform: translate(10px, -16px) rotate(2deg) scale(1.03); }
-}
-
-@keyframes condorDrift {
-  0% { filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.4)); }
-  50% { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.65)) drop-shadow(0 4px 8px rgba(0,0,0,0.35)); }
-  100% { filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5)) drop-shadow(0 2px 4px rgba(0,0,0,0.4)); }
-}
-
 @keyframes hymnIdle {
   0% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-3px) scale(1.01); }
@@ -1340,7 +1307,7 @@ body {
   .cannon-smoke, .haze, .haze-wisp,
   #held-flag path, #horse-tail, #horse-mane,
   #mouth-smoke, .mouth-smoke-line, .mouth-smoke-puff,
-  #andean-condor, #condor-halo, #musical-notes .note-body,
+  #musical-notes .note-body,
   #national-hymn-toggle {
     animation: none !important;
   }
