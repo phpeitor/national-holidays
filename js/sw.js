@@ -1,19 +1,6 @@
-var CACHE_NAME = "fiestas-patrias-v6";
-var urlsToCache = [
-  "../",
-  "../index.html",
-  "../css/style.css?v1.71",
-  "./script.js?v1.71",
-  "../resources/logo.png?v1.71",
-  "../manifest.json"
-];
+var CACHE_NAME = "fiestas-patrias-v7";
 
-self.addEventListener("install", function(event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(urlsToCache);
-    })
-  );
+self.addEventListener("install", function() {
   self.skipWaiting();
 });
 
@@ -34,8 +21,14 @@ self.addEventListener("activate", function(event) {
 
 self.addEventListener("fetch", function(event) {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
+    fetch(event.request).then(function(response) {
+      var cloned = response.clone();
+      caches.open(CACHE_NAME).then(function(cache) {
+        cache.put(event.request, cloned);
+      });
+      return response;
+    }).catch(function() {
+      return caches.match(event.request);
     })
   );
 });
