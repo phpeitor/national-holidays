@@ -6,58 +6,53 @@
 
 [![Video Demo](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=TRq8Ie4ubVU)
 
-## Overview
-
-Landing estatica e interactiva para Fiestas Patrias de Peru. La escena principal esta construida con SVG, CSS y JavaScript vanilla, sin framework ni proceso de build obligatorio.
-
-El objetivo del proyecto es mantener una pieza visual ligera, facil de desplegar en Apache y sencilla de editar por capas: cielo, suelo, edificios, personajes, caballo y efectos.
-
 ## Features
 
-- SVG ilustrado por capas para controlar cada bloque visual de forma independiente.
-- Countdown automatico desde 1821.
-- Animaciones de ambiente: fuegos artificiales, humo, neblina, bandera, caballo y publico.
-- Lightbox para visualizar el logo sin salir de la pagina.
-- Arquitectura estatica compatible con Apache, cPanel o cualquier servidor de archivos.
-- Templates parciales para evitar un `script.js` o un HTML monolitico dificil de mantener.
+- **Layered SVG composition** — each block is a separate template for isolated control.
+- **Automated year countdown** — animates from 1821 to the current year.
+- **Ambient animations** — smoke, haze, waving flag, horse sway, crowd movement.
+- **Logo lightbox** — click-to-expand with backdrop blur and animated entrance.
+- **National hymn toggle** — play/stop the anthem with floating musical notes.
+- **Network-first service worker** — instant updates online, offline fallback.
+- **Zero-config static stack** — deploy on Apache, cPanel, nginx, or any static server.
 
 ## Architecture
 
-```txt
+```
 national-holidays/
-|-- index.html
-|-- css/
-|   `-- style.css
-|-- js/
-|   |-- script.js
-|   `-- TweenMax.min.js
-|-- resources/
-|   `-- logo.png
-`-- templates/
-    `-- fusion-app/
-        |-- shell-open.html
-        |-- defs-and-sky.html
-        |-- ground.html
-        |-- back-building.html
-        |-- front-building.html
-        |-- background.html
-        |-- middleground.html
-        |-- foreground.html
-        |-- horse-mountie.html
-        |-- foreground-haze.html
-        `-- shell-close.html
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── script.js
+│   ├── sw.js
+│   └── TweenMax.min.js
+├── resources/
+│   ├── logo.png
+│   ├── himno_00.png
+│   ├── himno_01.png
+│   └── himno.mp3
+└── templates/
+    └── fusion-app/
+        ├── shell-open.html
+        ├── defs-and-sky.html
+        ├── ground.html
+        ├── back-building.html
+        ├── front-building.html
+        ├── background.html
+        ├── middleground.html
+        ├── foreground.html
+        ├── horse-mountie.html
+        ├── foreground-haze.html
+        └── shell-close.html
 ```
 
-## Template Strategy
+## Template Composition
 
-El SVG principal esta separado en parciales dentro de `templates/fusion-app/`. `js/script.js` define el orden de carga en `templateParts`, descarga cada archivo con `fetch()`, concatena el resultado y lo inserta en `#fusion-app`.
-
-Esta decision mantiene el proyecto sin build step, pero evita archivos gigantes donde sea dificil ubicar una seccion especifica.
-
-Orden actual de composicion:
+The main SVG is split into partials under `templates/fusion-app/`. `script.js` loads them in order via `fetch()`, concatenates the result, and injects it into `#fusion-app`. This keeps each file small and focused without a build step.
 
 ```js
-var templateParts = [
+const templateParts = [
   "shell-open",
   "defs-and-sky",
   "ground",
@@ -74,56 +69,72 @@ var templateParts = [
 
 ## Getting Started
 
-Clona el repositorio:
-
 ```bash
 git clone https://github.com/phpeitor/national-holidays.git
 cd national-holidays
 ```
 
-Sirve el proyecto desde Apache o cualquier servidor estatico. Si estas usando Apache local:
-
-```txt
-http://127.0.0.1/national-holidays/
-```
-
-Alternativa con Node.js:
+Serve with any HTTP server (templates require `fetch()` — `file://` won't work):
 
 ```bash
+# Apache
+# Point DocumentRoot to the project directory
+
+# Node.js
 npx serve .
 ```
 
-## Development Notes
+Open in browser:
 
-- No requiere `npm install` para funcionar.
-- No abrir directamente `index.html` con `file://`, porque los parciales se cargan con `fetch()` y necesitan HTTP.
-- Cuando cambies CSS, JS o templates, actualiza el cache busting en `index.html` y en `templateVersion` dentro de `js/script.js`.
-- Si agregas una nueva capa visual, crea un parcial en `templates/fusion-app/` y registralo en `templateParts` en el orden correcto.
-- Mantener la interactividad en `js/script.js`; mantener markup/SVG en `templates/fusion-app/`; mantener estilos en `css/style.css`.
+```
+http://localhost:3000
+```
+
+## Development
+
+### Principles
+
+- **No build step** — edit any file and refresh to see changes.
+- **Service worker** uses network-first strategy: fetches fresh content online, falls back to cache offline. No manual cache busting required.
+- **Template cache busting** is handled automatically via `templateVersion` in `script.js`.
+
+### Adding a new layer
+
+1. Create a partial in `templates/fusion-app/` (e.g., `my-layer.html`).
+2. Register it in `templateParts` in `js/script.js` at the correct visual order.
+3. Add CSS in `css/style.css` if needed.
+
+### Code boundaries
+
+| Concern | Location |
+|---|---|
+| SVG markup | `templates/fusion-app/*.html` |
+| Styling | `css/style.css` |
+| Interactivity & loading | `js/script.js` |
 
 ## Validation
-
-Comprobacion rapida de sintaxis JavaScript:
 
 ```bash
 node --check js/script.js
 ```
 
-Comprobaciones recomendadas antes de publicar:
+Pre-release checklist:
 
-- Abrir la pagina por HTTP y revisar la consola del navegador.
-- Confirmar que todos los parciales en `templates/fusion-app/` respondan `200`.
-- Probar desktop y mobile.
-- Validar que el countdown, el lightbox y las animaciones sigan activos.
+- Page loads over HTTP, not `file://`
+- All partials in `templates/fusion-app/` return `200`
+- Console shows no errors (countdown, lightbox, animations working)
+- Test both desktop and mobile viewports
 
 ## Deployment
 
-El proyecto se despliega como sitio estatico. Sube estos archivos al servidor manteniendo la estructura de carpetas:
+Static deployment. Required files:
 
-- `index.html`
-- `css/`
-- `js/`
-- `resources/`
-- `templates/`
+```
+index.html
+css/
+js/
+resources/
+templates/
+```
 
-En Apache o cPanel, no se requiere configuracion especial mientras los archivos `.html`, `.css`, `.js` y assets se sirvan publicamente.
+No server configuration needed — works on Apache, cPanel, nginx, Netlify, Vercel, or any static host.
