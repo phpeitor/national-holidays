@@ -2,9 +2,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/validated-html5.svg)](https://www.linkedin.com/in/drphp/)
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
-[![Video](https://img.youtube.com/vi/TRq8Ie4ubVU/0.jpg)](https://www.youtube.com/watch?v=TRq8Ie4ubVU)
+[![Video](https://img.youtube.com/vi/CfgApknJI8U/0.jpg)](https://www.youtube.com/watch?v=CfgApknJI8U)
 
-[![Video Demo](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=TRq8Ie4ubVU)
+[![Video Demo](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=CfgApknJI8U)
 
 ## Features
 
