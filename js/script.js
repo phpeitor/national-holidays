@@ -271,7 +271,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	if ("serviceWorker" in navigator) {
-		var basePath = location.pathname.replace(/\/[^\/]*$/, "/");
-		navigator.serviceWorker.register("./js/sw.js", { scope: basePath }).catch(function() {});
+		navigator.serviceWorker.getRegistrations().then(function(regs) {
+			regs.forEach(function(reg) { reg.unregister(); });
+		});
+		navigator.serviceWorker.register("./js/sw.js", { scope: "./", updateViaCache: "none" }).catch(function() {});
 	}
 });
